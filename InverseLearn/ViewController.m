@@ -10,6 +10,8 @@
 
 @interface ViewController ()
 
+typedef NSString* (^IntToStringConvert)(id self, NSInteger integer);
+
 @end
 
 @implementation ViewController
@@ -18,6 +20,16 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSInteger outsideVar = 10;
+    void (^myBlock)(void) = ^(void){
+        NSLog(@"%d", outsideVar);
+    };
+    myBlock();
+    
+    IntToStringConvert intToStringConvert = ^(id self, NSInteger integer){
+        NSString *result = [NSString stringWithFormat:@"%d", integer];
+        return result;
+    };
 }
 
 - (void)didReceiveMemoryWarning
