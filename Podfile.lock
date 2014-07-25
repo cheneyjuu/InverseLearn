@@ -20,17 +20,30 @@ PODS:
   - AFNetworking/UIKit (2.3.1):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FMDB (2.3):
+    - FMDB/standard
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
   - IQKeyboardManager (3.0.6)
   - MBProgressHUD (0.8)
+  - RKTabView (1.0.1)
+  - ZBarSDK (1.3.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.3.1)
+  - FMDB (~> 2.3)
   - IQKeyboardManager
   - MBProgressHUD (~> 0.8)
+  - RKTabView (~> 1.0.1)
+  - ZBarSDK (~> 1.3.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 6d7b76aa5d04c8c37daad3eef4b7e3f2a7620da3
+  FMDB: 31ec26773c7f7b7890a6038235a1f2bbd933a7cb
   IQKeyboardManager: 3381092a6728e3565a6ad5051c44386be36bd990
   MBProgressHUD: c356980b0cd097f19acec959b49dca5eb8ec31be
+  RKTabView: fdea8078a5bf962777e4a6f34db5eb147050bfc1
+  ZBarSDK: 3ed560856963f765b66d834f464590bd6ba13b44
 
 COCOAPODS: 0.33.1

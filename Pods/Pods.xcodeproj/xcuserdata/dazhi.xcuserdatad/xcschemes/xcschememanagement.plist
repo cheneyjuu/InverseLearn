@@ -9,12 +9,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-MBProgressHUD.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-RKTabView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>D8455CDB8F884C0181738998</key>
+		<key>43E453DB23CD48648136A2DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EC489A67E1FD442C9C121601</key>
+		<key>47DEE79A3CB846B69732A8FC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F5BBDDB0E3F5478893FC3CD8</key>
+		<key>490B6A9CE5DE4265AF1B6DCD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F7E645953425403A9A6F5FFA</key>
+		<key>8495D55947D54F80BA1077F3</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AEE420BFF1294961A03C2556</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>C478F2BBD7CF4D458F219288</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F6FA41E5CE0E403D9BBC682C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

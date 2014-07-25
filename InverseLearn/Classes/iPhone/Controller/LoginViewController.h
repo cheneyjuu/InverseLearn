@@ -20,6 +20,5 @@
 
 - (IBAction)aboutAction:(id)sender;
 - (IBAction)loginAction:(id)sender;
-- (IBAction)visitorAction:(id)sender;
 
 @end

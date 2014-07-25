@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		1A788BB36EAF46AEAF6F1C9B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAB9A33884140239E6B88D7 /* libPods.a */; };
+		6456950E1981DD9400DEF14F /* CQSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6456950D1981DD9400DEF14F /* CQSegmentControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		645695161981DF8E00DEF14F /* seg-bg-defualt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456950F1981DF8E00DEF14F /* seg-bg-defualt.png */; };
+		645695171981DF8E00DEF14F /* selectedNo.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695101981DF8E00DEF14F /* selectedNo.png */; };
+		645695191981DF8E00DEF14F /* selectedYes.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695121981DF8E00DEF14F /* selectedYes.png */; };
+		6456951A1981DF8E00DEF14F /* unSelectNo.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695131981DF8E00DEF14F /* unSelectNo.png */; };
+		6456951B1981DF8E00DEF14F /* unSelectYes.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695141981DF8E00DEF14F /* unSelectYes.png */; };
+		645695211981E53000DEF14F /* selectedNo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456951D1981E53000DEF14F /* selectedNo@2x.png */; };
+		645695221981E53000DEF14F /* selectedYes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456951E1981E53000DEF14F /* selectedYes@2x.png */; };
+		645695231981E53000DEF14F /* unSelectNo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456951F1981E53000DEF14F /* unSelectNo@2x.png */; };
+		645695241981E53000DEF14F /* unSelectYes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695201981E53000DEF14F /* unSelectYes@2x.png */; };
+		645695271982156800DEF14F /* AppCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645695261982156800DEF14F /* AppCenterViewController.m */; };
+		6456952A1982181D00DEF14F /* bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695281982181D00DEF14F /* bg_project.png */; };
+		6456952B1982181D00DEF14F /* btn_backLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695291982181D00DEF14F /* btn_backLogin.png */; };
+		6456952D1982186900DEF14F /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456952C1982186900DEF14F /* bg_login.png */; };
 		645A2A90197F4D500066C901 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A2A8F197F4D500066C901 /* LoginViewController.m */; };
 		645A2A92197F84E60066C901 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645A2A91197F84E60066C901 /* QuartzCore.framework */; };
 		645AD9C719808A83002389D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645AD9C619808A83002389D9 /* UserModel.m */; };
@@ -69,10 +83,6 @@
 		64E1BDF81980E37C000183E1 /* radio_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF31980E37C000183E1 /* radio_checked@2x.png */; };
 		64E1BDF91980E37C000183E1 /* radio_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF41980E37C000183E1 /* radio_unchecked.png */; };
 		64E1BDFA1980E37C000183E1 /* radio_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF51980E37C000183E1 /* radio_unchecked@2x.png */; };
-		64E1BDFD1980EF0A000183E1 /* schoolN.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDFB1980EF0A000183E1 /* schoolN.png */; };
-		64E1BDFE1980EF0A000183E1 /* schoolY.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDFC1980EF0A000183E1 /* schoolY.png */; };
-		64E1BE011980F095000183E1 /* schoolN@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDFF1980F095000183E1 /* schoolN@2x.png */; };
-		64E1BE021980F095000183E1 /* schoolY@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BE001980F095000183E1 /* schoolY@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +98,22 @@
 /* Begin PBXFileReference section */
 		1DAB9A33884140239E6B88D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE7A09A5397454781D9C1FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		6456950C1981DD9400DEF14F /* CQSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSegmentControl.h; sourceTree = "<group>"; };
+		6456950D1981DD9400DEF14F /* CQSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSegmentControl.m; sourceTree = "<group>"; };
+		6456950F1981DF8E00DEF14F /* seg-bg-defualt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seg-bg-defualt.png"; sourceTree = "<group>"; };
+		645695101981DF8E00DEF14F /* selectedNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedNo.png; sourceTree = "<group>"; };
+		645695121981DF8E00DEF14F /* selectedYes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = selectedYes.png; sourceTree = "<group>"; };
+		645695131981DF8E00DEF14F /* unSelectNo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unSelectNo.png; sourceTree = "<group>"; };
+		645695141981DF8E00DEF14F /* unSelectYes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = unSelectYes.png; sourceTree = "<group>"; };
+		6456951D1981E53000DEF14F /* selectedNo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedNo@2x.png"; sourceTree = "<group>"; };
+		6456951E1981E53000DEF14F /* selectedYes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedYes@2x.png"; sourceTree = "<group>"; };
+		6456951F1981E53000DEF14F /* unSelectNo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unSelectNo@2x.png"; sourceTree = "<group>"; };
+		645695201981E53000DEF14F /* unSelectYes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unSelectYes@2x.png"; sourceTree = "<group>"; };
+		645695251982156800DEF14F /* AppCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCenterViewController.h; sourceTree = "<group>"; };
+		645695261982156800DEF14F /* AppCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCenterViewController.m; sourceTree = "<group>"; };
+		645695281982181D00DEF14F /* bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_project.png; sourceTree = "<group>"; };
+		645695291982181D00DEF14F /* btn_backLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_backLogin.png; sourceTree = "<group>"; };
+		6456952C1982186900DEF14F /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		645A2A8E197F4D500066C901 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		645A2A8F197F4D500066C901 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		645A2A91197F84E60066C901 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -162,10 +188,6 @@
 		64E1BDF31980E37C000183E1 /* radio_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_checked@2x.png"; sourceTree = "<group>"; };
 		64E1BDF41980E37C000183E1 /* radio_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unchecked.png; sourceTree = "<group>"; };
 		64E1BDF51980E37C000183E1 /* radio_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_unchecked@2x.png"; sourceTree = "<group>"; };
-		64E1BDFB1980EF0A000183E1 /* schoolN.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schoolN.png; sourceTree = "<group>"; };
-		64E1BDFC1980EF0A000183E1 /* schoolY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = schoolY.png; sourceTree = "<group>"; };
-		64E1BDFF1980F095000183E1 /* schoolN@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schoolN@2x.png"; sourceTree = "<group>"; };
-		64E1BE001980F095000183E1 /* schoolY@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "schoolY@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +253,8 @@
 				64930BB019809CF0005FDD9F /* RegisterViewController.m */,
 				64930BF51980A895005FDD9F /* AboutUsViewController.h */,
 				64930BF61980A895005FDD9F /* AboutUsViewController.m */,
+				645695251982156800DEF14F /* AppCenterViewController.h */,
+				645695261982156800DEF14F /* AppCenterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -247,10 +271,18 @@
 		64930BB219809F80005FDD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				64E1BDFF1980F095000183E1 /* schoolN@2x.png */,
-				64E1BE001980F095000183E1 /* schoolY@2x.png */,
-				64E1BDFB1980EF0A000183E1 /* schoolN.png */,
-				64E1BDFC1980EF0A000183E1 /* schoolY.png */,
+				6456952C1982186900DEF14F /* bg_login.png */,
+				645695281982181D00DEF14F /* bg_project.png */,
+				645695291982181D00DEF14F /* btn_backLogin.png */,
+				6456951D1981E53000DEF14F /* selectedNo@2x.png */,
+				6456951E1981E53000DEF14F /* selectedYes@2x.png */,
+				6456951F1981E53000DEF14F /* unSelectNo@2x.png */,
+				645695201981E53000DEF14F /* unSelectYes@2x.png */,
+				6456950F1981DF8E00DEF14F /* seg-bg-defualt.png */,
+				645695101981DF8E00DEF14F /* selectedNo.png */,
+				645695121981DF8E00DEF14F /* selectedYes.png */,
+				645695131981DF8E00DEF14F /* unSelectNo.png */,
+				645695141981DF8E00DEF14F /* unSelectYes.png */,
 				64930BF81980AD92005FDD9F /* logo_login.png */,
 				64930BB319809FD1005FDD9F /* app_default@2x.png */,
 				64930BB419809FD1005FDD9F /* app_mentalArithmetic@2x.png */,
@@ -372,6 +404,8 @@
 		64E1BDEC1980DCEC000183E1 /* Custom */ = {
 			isa = PBXGroup;
 			children = (
+				6456950C1981DD9400DEF14F /* CQSegmentControl.h */,
+				6456950D1981DD9400DEF14F /* CQSegmentControl.m */,
 				64E1BDF01980E37C000183E1 /* QRadioButton.h */,
 				64E1BDF11980E37C000183E1 /* QRadioButton.m */,
 				64E1BDF21980E37C000183E1 /* radio_checked.png */,
@@ -467,9 +501,9 @@
 			files = (
 				64E1BDF91980E37C000183E1 /* radio_unchecked.png in Resources */,
 				64E0FF6B197E056E006B78BF /* Main_iPad.storyboard in Resources */,
-				64E1BE021980F095000183E1 /* schoolY@2x.png in Resources */,
 				64E0FF70197E056E006B78BF /* Images.xcassets in Resources */,
 				64930BE719809FD1005FDD9F /* btn_no@2x.png in Resources */,
+				645695211981E53000DEF14F /* selectedNo@2x.png in Resources */,
 				64930BD419809FD1005FDD9F /* app_default@2x.png in Resources */,
 				64930BD619809FD1005FDD9F /* bg_loading-568h@2x.png in Resources */,
 				64930BD819809FD1005FDD9F /* bg_login-568h@2x.png in Resources */,
@@ -484,14 +518,18 @@
 				64E1BDF71980E37C000183E1 /* radio_checked.png in Resources */,
 				64930BEE19809FD1005FDD9F /* btn_yes@2x.png in Resources */,
 				64930BE119809FD1005FDD9F /* btn_info_press@2x.png in Resources */,
-				64E1BDFD1980EF0A000183E1 /* schoolN.png in Resources */,
 				64930BD719809FD1005FDD9F /* bg_loading@2x.png in Resources */,
 				64930BEC19809FD1005FDD9F /* btn_toAbout_press@2x.png in Resources */,
 				64E0FF68197E056E006B78BF /* Main_iPhone.storyboard in Resources */,
 				64E1BDFA1980E37C000183E1 /* radio_unchecked@2x.png in Resources */,
+				6456951A1981DF8E00DEF14F /* unSelectNo.png in Resources */,
+				6456952A1982181D00DEF14F /* bg_project.png in Resources */,
+				645695241981E53000DEF14F /* unSelectYes@2x.png in Resources */,
 				64930BE219809FD1005FDD9F /* btn_info@2x.png in Resources */,
 				64930BE919809FD1005FDD9F /* btn_outAbout@2x.png in Resources */,
+				645695161981DF8E00DEF14F /* seg-bg-defualt.png in Resources */,
 				64930BF419809FD1005FDD9F /* pic_line_sawtooth@2x.png in Resources */,
+				6456952B1982181D00DEF14F /* btn_backLogin.png in Resources */,
 				64930BE519809FD1005FDD9F /* btn_logout_press@2x.png in Resources */,
 				64930BDB19809FD1005FDD9F /* bg_project@2x.png in Resources */,
 				64930BED19809FD1005FDD9F /* btn_toAbout@2x.png in Resources */,
@@ -500,16 +538,20 @@
 				64930BDE19809FD1005FDD9F /* btn_backLogin@2x.png in Resources */,
 				64930BEA19809FD1005FDD9F /* btn_submit_press@2x.png in Resources */,
 				64E1BDF81980E37C000183E1 /* radio_checked@2x.png in Resources */,
+				645695231981E53000DEF14F /* unSelectNo@2x.png in Resources */,
 				64930BDC19809FD1005FDD9F /* bg_tabbar@2x.png in Resources */,
 				64E0FF5F197E056E006B78BF /* InfoPlist.strings in Resources */,
+				6456951B1981DF8E00DEF14F /* unSelectYes.png in Resources */,
 				64930BF019809FD1005FDD9F /* icon_radio_checked@2x.png in Resources */,
 				64930BE619809FD1005FDD9F /* btn_logout@2x.png in Resources */,
 				64930BD519809FD1005FDD9F /* app_mentalArithmetic@2x.png in Resources */,
-				64E1BDFE1980EF0A000183E1 /* schoolY.png in Resources */,
+				645695221981E53000DEF14F /* selectedYes@2x.png in Resources */,
+				645695171981DF8E00DEF14F /* selectedNo.png in Resources */,
 				64930BEB19809FD1005FDD9F /* btn_submit@2x.png in Resources */,
+				645695191981DF8E00DEF14F /* selectedYes.png in Resources */,
 				64930BE019809FD1005FDD9F /* btn_class@2x.png in Resources */,
-				64E1BE011980F095000183E1 /* schoolN@2x.png in Resources */,
 				64930BF219809FD1005FDD9F /* logo_login@2x.png in Resources */,
+				6456952D1982186900DEF14F /* bg_login.png in Resources */,
 				64930BE819809FD1005FDD9F /* btn_outAbout_press@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -564,8 +606,10 @@
 			files = (
 				645A2A90197F4D500066C901 /* LoginViewController.m in Sources */,
 				645AD9C719808A83002389D9 /* UserModel.m in Sources */,
+				6456950E1981DD9400DEF14F /* CQSegmentControl.m in Sources */,
 				64E0FF6E197E056E006B78BF /* ViewController.m in Sources */,
 				64E0FF65197E056E006B78BF /* AppDelegate.m in Sources */,
+				645695271982156800DEF14F /* AppCenterViewController.m in Sources */,
 				64930BF71980A895005FDD9F /* AboutUsViewController.m in Sources */,
 				64E1BDF61980E37C000183E1 /* QRadioButton.m in Sources */,
 				64930BB119809CF0005FDD9F /* RegisterViewController.m in Sources */,

@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "UserViewModel.h"
 #import "UserModel.h"
+#import "FMDatabase.h"
 
 @interface LoginViewController (){
 }
@@ -100,6 +101,8 @@
         if ([[result objectForKey:@"erro"] integerValue] == 1) {
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[result objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [av show];
+        } else {
+            [self performSegueWithIdentifier:@"AppCenterStoryBoard" sender:self];
         }
         
         NSLog(@"userName: %@", result);
@@ -109,6 +112,7 @@
 }
 
 /*
+ */
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -116,8 +120,8 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    [_userNameTextField resignFirstResponder];
 }
-*/
 
 #pragma mark -
 
@@ -136,7 +140,8 @@
     }
 }
 
-- (IBAction)visitorAction:(id)sender {
+-(void)insertUser{
+    
 }
 
 - (IBAction)aboutAction:(id)sender {
