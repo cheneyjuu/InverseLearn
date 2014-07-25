@@ -7,6 +7,7 @@
 //
 
 #import "RegisterViewController.h"
+#import "CQSegmentControl.h"
 
 @interface RegisterViewController ()
 
@@ -31,21 +32,29 @@
     [self customTextFieldStyle];
     [self customeSexStyle];
     
-    UISegmentedControl *segmented = [[UISegmentedControl alloc] initWithFrame:CGRectMake(40, 335, 80, 44)];
+    NSArray *titleItems = @[@"", @""];
+    UIImage *unSelectYesImage = [UIImage imageNamed:@"unSelectYes.png"];
+    UIImage *unSelectNoImage = [UIImage imageNamed:@"unSelectNo.png"];
     
-    segmented.segmentedControlStyle= UISegmentedControlStyleBar;
-    segmented.backgroundColor = [UIColor clearColor];
+    UIImage *selectedYesImage = [UIImage imageNamed:@"selectedYes.png"];
+    UIImage *selectedNoImage = [UIImage imageNamed:@"selectedNo.png"];
     
-    [segmented insertSegmentWithTitle:@"" atIndex:0 animated:NO];
-    [segmented insertSegmentWithTitle:@"" atIndex:1 animated:NO];
+    NSMutableArray *unselectImageArray = [NSMutableArray arrayWithObjects:unSelectYesImage, unSelectNoImage, nil];
+    NSMutableArray *selectedImageArray = [NSMutableArray arrayWithObjects:selectedYesImage, selectedNoImage, nil];
     
-    UIImageView *imageView1 = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 40, 44)];
-    imageView1.image = [UIImage imageNamed:@"schoolY.png"];
-    [segmented insertSubview:imageView1 atIndex:0];
-    
-    [segmented setSelectedSegmentIndex:0];
-    
-    [self.view addSubview:segmented];
+    CQSegmentControl *segmentedControl= [[CQSegmentControl alloc] initWithItemsAndStype:titleItems stype:TitleAndImageSegmented];
+    for (UIView *subView in segmentedControl.subviews)
+	{
+		[subView removeFromSuperview];
+	}
+	segmentedControl.normalImageItems = unselectImageArray;
+	segmentedControl.highlightImageItems = selectedImageArray;
+	segmentedControl.unselectedItemColor = UIColorFromRGB(0xED8222);
+    segmentedControl.selectedItemColor = UIColorFromRGB(0x6F2A22);
+	segmentedControl.selectedSegmentIndex = 1;
+    segmentedControl.frame = CGRectMake(40.0f, 10.0f, 64.0f, 58.0f);
+    [segmentedControl addTarget:self action:@selector(schoolAction:) forControlEvents:UIControlEventValueChanged];
+    [self.schoolView addSubview:segmentedControl];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -70,18 +79,18 @@
     QRadioButton *maleButton = [[QRadioButton alloc] initWithDelegate:self groupId:@"sexGroup"];
     QRadioButton *femaleButton = [[QRadioButton alloc] initWithDelegate:self groupId:@"sexGroup"];
     
-    maleButton.frame = CGRectMake(82, 281, 80, 40);
+    maleButton.frame = CGRectMake(100, 10, 80, 40);
     [maleButton setTitle:@"男" forState:UIControlStateNormal];
-    [maleButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [maleButton setTitleColor:UIColorFromRGB(0xED8222) forState:UIControlStateNormal];
     [maleButton.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
     [maleButton setChecked:YES];
-    [self.view addSubview:maleButton];
+    [self.sexView addSubview:maleButton];
     
-    femaleButton.frame = CGRectMake(140, 281, 80, 40);
+    femaleButton.frame = CGRectMake(160, 10, 80, 40);
     [femaleButton setTitle:@"女" forState:UIControlStateNormal];
-    [femaleButton setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
+    [femaleButton setTitleColor:UIColorFromRGB(0xED8222) forState:UIControlStateNormal];
     [femaleButton.titleLabel setFont:[UIFont boldSystemFontOfSize:13.0f]];
-    [self.view addSubview:femaleButton];
+    [self.sexView addSubview:femaleButton];
     
 }
 
@@ -110,6 +119,26 @@
     textField.leftViewMode = UITextFieldViewModeAlways;
 }
 
+#pragma mark  是否在校
+-(void)schoolAction:(id)sender{
+    
+}
+
+- (IBAction)registerAction:(id)sender {
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *params = @{@"account":@"123123", @"pwd":@"123123", @"nickname":@"123123", @"phone":@"13867564532123", @"sex":@1, @"type":@2, @"schoolid":@1003};
+    NSString *registerURL = [NSString stringWithFormat:@"%@/account/regist", baseUrl];
+    [manager POST:registerURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        if ([[responseObject objectForKey:@"erro"] intValue] == 1) {
+            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[responseObject objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
+            [av show];
+        }
+        NSLog(@"register successful: %@", [responseObject objectForKey:@"msg"]);
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"register failed: %@", operation);
+    }];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -126,19 +155,4 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-- (IBAction)registerAction:(id)sender {
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *params = @{@"account":@"yangyong", @"pwd":@"12345678", @"nickname":@"yangyong", @"phone":@"13867564532123", @"sex":@1, @"type":@2, @"schoolid":@1003};
-    NSString *registerURL = [NSString stringWithFormat:@"%@/account/regist", baseUrl];
-    [manager POST:registerURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        if ([[responseObject objectForKey:@"erro"] intValue] == 1) {
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[responseObject objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [av show];
-        }
-        NSLog(@"register successful: %@", [responseObject objectForKey:@"msg"]);
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"register failed: %@", operation);
-    }];
-}
 @end

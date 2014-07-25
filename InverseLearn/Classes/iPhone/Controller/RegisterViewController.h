@@ -17,5 +17,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *trueNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *phoneNumberTextField;
 
+@property (weak, nonatomic) IBOutlet UIView *sexView;
+@property (weak, nonatomic) IBOutlet UIView *schoolView;
+
 - (IBAction)registerAction:(id)sender;
 @end
