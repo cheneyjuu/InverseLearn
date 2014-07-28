@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RKTabView.h"
 
-@interface AppCenterViewController : UIViewController
+@interface AppCenterViewController : UIViewController <RKTabViewDelegate>
+
+- (IBAction)backToLoginAction:(id)sender;
 
 @end

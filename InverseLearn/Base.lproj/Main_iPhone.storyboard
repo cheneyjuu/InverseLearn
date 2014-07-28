@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="PHD-R3-5fN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" variant="6xAndEarlier" propertyAccessControl="none" useAutolayout="YES" initialViewController="bMP-wi-eXh">
     <dependencies>
         <deployment version="1552" defaultVersion="1536" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
@@ -14,7 +14,7 @@
                         <viewControllerLayoutGuide type="bottom" id="uPu-4b-DPe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_login.png" translatesAutoresizingMaskIntoConstraints="NO" id="G2A-dY-hJ1">
@@ -29,7 +29,7 @@
                                 </state>
                                 <connections>
                                     <action selector="aboutAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aae-J4-wTo"/>
-                                    <segue destination="7B5-9p-xev" kind="push" id="tQi-HK-8KU"/>
+                                    <segue destination="7B5-9p-xev" kind="push" identifier="ABOUTSBI" id="rwI-DT-ALx"/>
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="关于我们" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iHj-yx-Tmy">
@@ -71,6 +71,7 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="fC7-4w-UVf"/>
+                                    <segue destination="ox6-Z7-hQw" kind="push" identifier="LoginAppCenterSBI" id="f4x-8d-WAn"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="|" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cm0-YB-orY">
@@ -89,7 +90,8 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="vKO-GU-cYK" kind="push" id="ITn-50-sZX"/>
+                                    <action selector="registerAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="d1O-hd-RIQ"/>
+                                    <segue destination="vKO-GU-cYK" kind="push" id="HJP-B0-agg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sjh-gh-3eS">
@@ -101,11 +103,11 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ox6-Z7-hQw" kind="push" identifier="AppCenterStoryBoard" id="rK1-nJ-2zW"/>
+                                    <action selector="visitorAction:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="K4a-Eg-nIN"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="上海大知科技股份有限公司" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cC6-xu-hwO">
-                                <rect key="frame" x="76" y="467" width="168" height="17"/>
+                                <rect key="frame" x="77" y="511" width="168" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.94117647059999998" green="0.51372549020000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
@@ -135,12 +137,11 @@
                         <outlet property="loginButton" destination="fiE-Go-dNB" id="8nn-y7-4iQ"/>
                         <outlet property="userNameTextField" destination="0NL-Gr-m1V" id="32Z-n9-wxS"/>
                         <outlet property="userPasswordTextField" destination="e5d-7B-BuA" id="QPV-tu-32K"/>
-                        <segue destination="ox6-Z7-hQw" kind="push" identifier="AppCenterStoryBoard" id="Cpv-fl-D7g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-623" y="-74"/>
+            <point key="canvasLocation" x="-1845" y="436"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="GGe-ss-v2c">
@@ -151,7 +152,7 @@
                         <viewControllerLayoutGuide type="bottom" id="B3E-b1-mkx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="zeu-vY-4dN">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lLI-u3-9P0">
@@ -286,12 +287,11 @@
                         <outlet property="sexView" destination="aK4-hn-6Lp" id="ZpX-AE-RQ2"/>
                         <outlet property="trueNameTextField" destination="Sb0-XH-pmy" id="p3s-4O-2AN"/>
                         <outlet property="userNameTextField" destination="3UC-Jz-oeq" id="6KR-Xr-ulo"/>
-                        <segue destination="ox6-Z7-hQw" kind="push" identifier="AppCenterStoryBoard" id="ISo-Cn-XRA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jca-eK-uCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="338"/>
+            <point key="canvasLocation" x="-1334" y="436"/>
         </scene>
         <!--App Center View Controller-->
         <scene sceneID="rTS-jv-fY0">
@@ -305,18 +305,44 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bg_project.png" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-q7-6Lu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="bg_project.png" translatesAutoresizingMaskIntoConstraints="NO" id="XC9-q7-6Lu">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ZFf-mM-Kw1" firstAttribute="top" secondItem="XC9-q7-6Lu" secondAttribute="bottom" id="RsK-5k-UvE"/>
+                            <constraint firstItem="XC9-q7-6Lu" firstAttribute="top" secondItem="FMp-hG-Akt" secondAttribute="bottom" id="nGZ-SB-dhP"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R6X-4B-SJq"/>
+                    <navigationItem key="navigationItem" id="R6X-4B-SJq">
+                        <barButtonItem key="leftBarButtonItem" width="120" style="done" id="8aK-xV-9l0">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aa6-T3-Elz">
+                                <rect key="frame" x="5" y="0.0" width="116" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <inset key="contentEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="返回登录" image="btn_backLogin.png">
+                                    <color key="titleColor" red="0.97647058819999999" green="1" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToLoginAction:" destination="ox6-Z7-hQw" eventType="touchUpInside" id="wJr-Kp-hxt"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="BackToLoginSBI" id="1XG-Ir-oRc"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="modal" identifier="LoginSBI" id="dfE-pb-akD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jOZ-nI-Hhu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="499" y="-74"/>
+            <point key="canvasLocation" x="-2269" y="436"/>
         </scene>
         <!--About Us View Controller-->
         <scene sceneID="UP3-nb-ivx">
@@ -327,7 +353,7 @@
                         <viewControllerLayoutGuide type="bottom" id="os8-ka-Geb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pko-X0-Aze">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" red="0.94117647059999998" green="0.51372549020000002" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
@@ -335,33 +361,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zov-dc-6HH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1" y="-596"/>
+            <point key="canvasLocation" x="-1845" y="-301"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="ldX-fl-olT">
+        <scene sceneID="A3q-Aq-p1y">
             <objects>
-                <navigationController id="PHD-R3-5fN" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="bMP-wi-eXh" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="KAg-G9-yIh">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OP9-Q0-Rkn">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43529411759999997" green="0.1647058824" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.97647058819999999" green="1" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="WzZ-sz-3y5"/>
+                        <segue destination="ox6-Z7-hQw" kind="relationship" relationship="rootViewController" id="931-U5-szp"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fef-J5-ISa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J5s-ly-eW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1112" y="-90"/>
+            <point key="canvasLocation" x="-2675" y="436"/>
         </scene>
     </scenes>
     <resources>
         <image name="bg_login.png" width="320" height="480"/>
         <image name="bg_project.png" width="320" height="480"/>
+        <image name="btn_backLogin.png" width="44" height="44"/>
         <image name="btn_submit.png" width="193" height="34"/>
         <image name="btn_toAbout.png" width="10" height="12"/>
         <image name="logo_login.png" width="120" height="67"/>
@@ -372,6 +400,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="rK1-nJ-2zW"/>
+        <segue reference="1XG-Ir-oRc"/>
+        <segue reference="f4x-8d-WAn"/>
     </inferredMetricsTieBreakers>
 </document>

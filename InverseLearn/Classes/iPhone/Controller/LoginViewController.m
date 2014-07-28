@@ -33,13 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"login view did load");
     [self customTextFieldStyle];
-//    [self customeButtonStyle];
-    
+    NSLog(@"navigation: %@", self.navigationController);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
 
@@ -102,10 +101,15 @@
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[result objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [av show];
         } else {
-            [self performSegueWithIdentifier:@"AppCenterStoryBoard" sender:self];
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            NSString *myUserId = [[result objectForKey:@"data"] objectForKey:@"ID"];
+            NSString *myUserName =[[result objectForKey:@"data"] objectForKey:@"UserName"];
+            [userDefault setObject:myUserId forKey:@kUserId];
+            [userDefault setObject:myUserName forKey:@kUserName];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         
-        NSLog(@"userName: %@", result);
+        NSLog(@"!!FROM LOGIN ACTION -- result data: %@", [[result objectForKey:@"data"] objectForKey:@"ID"]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", error);
     }];
@@ -120,7 +124,6 @@
 {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    [_userNameTextField resignFirstResponder];
 }
 
 #pragma mark -
@@ -140,11 +143,20 @@
     }
 }
 
+- (IBAction)visitorAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)registerAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)insertUser{
     
 }
 
 - (IBAction)aboutAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

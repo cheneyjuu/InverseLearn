@@ -28,6 +28,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"REGISTER VIEW CONTROLLER");
     // Do any additional setup after loading the view.
     self.title = @"用户注册";
     self.navigationController.navigationBarHidden = NO;
@@ -222,7 +223,7 @@
         [dict setValue:[_userData objectForKey:@"sex"] forKey:@"Sex"];
         [dict setValue:[_userData objectForKey:@"schoolid"] forKey:@"SchoolID"];
         _userModel = [[UserModel alloc] initWithDict:dict];
-        [self performSegueWithIdentifier:@"AppCenterStoryBoard" sender:self];
+        [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
     }
 }
 
