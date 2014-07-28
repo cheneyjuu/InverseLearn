@@ -28,8 +28,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"REGISTER VIEW CONTROLLER");
     // Do any additional setup after loading the view.
+    self.title = @"用户注册";
     self.navigationController.navigationBarHidden = NO;
+    UIBarButtonItem *leftButtonItem = [self createBackButton];
+    self.navigationItem.leftBarButtonItem = leftButtonItem;
     [self customTextFieldStyle];
     [self customeSexStyle];
     
@@ -68,6 +72,28 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
+}
+
+-(UIBarButtonItem*) createBackButton{
+    
+    UIImage* image= [UIImage imageNamed:@"btn_backLogin"];
+    CGRect backframe= CGRectMake(0, 0, image.size.width, image.size.height);
+    UIButton* backButton= [UIButton buttonWithType:UIButtonTypeCustom];
+    backButton.frame = backframe;
+    [backButton setBackgroundImage:image forState:UIControlStateNormal];
+    [backButton setTitle:@"返回登录" forState:UIControlStateNormal];
+    [backButton setTitleColor:UIColorFromRGB(0x6F2A22) forState:UIControlStateNormal];
+    backButton.titleLabel.font=[UIFont systemFontOfSize:14];
+    backButton.titleLabel.textAlignment = NSTextAlignmentLeft;
+    backButton.titleEdgeInsets = UIEdgeInsetsMake(0, 240, 0, 0);
+    [backButton addTarget:self action:@selector(popself) forControlEvents:UIControlEventTouchUpInside];
+    //定制自己的风格的  UIBarButtonItem
+    UIBarButtonItem* someBarButtonItem= [[UIBarButtonItem alloc] initWithCustomView:backButton];
+    return someBarButtonItem;
+}
+
+-(void)popself{
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 -(void)customTextFieldStyle{
@@ -189,7 +215,7 @@
     // tag=1000 在注册成功时，会弹出“注册成功”提醒，此alterView的tag=1000
     if (alertView.tag == 1000) {
         // 将用户信息写入UserModel,并将用户带入“应用中心”页面
-        NSDictionary *dict = [[NSDictionary alloc] init];
+        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
         [dict setValue:[_userData objectForKey:@"account"] forKey:@"UserId"];
         [dict setValue:[_userData objectForKey:@"pwd"] forKey:@"PassWord"];
         [dict setValue:[_userData objectForKey:@"nickname"] forKey:@"UserName"];
@@ -197,6 +223,7 @@
         [dict setValue:[_userData objectForKey:@"sex"] forKey:@"Sex"];
         [dict setValue:[_userData objectForKey:@"schoolid"] forKey:@"SchoolID"];
         _userModel = [[UserModel alloc] initWithDict:dict];
+        [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
     }
 }
 

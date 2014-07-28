@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-HexColors.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-IQKeyboardManager.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -25,6 +30,11 @@
 			<false/>
 		</dict>
 		<key>Pods-RKTabView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-TSMessages.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,37 +52,47 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>43E453DB23CD48648136A2DB</key>
+		<key>34EA7232083F458C90B9CD54</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>47DEE79A3CB846B69732A8FC</key>
+		<key>40A52BC0138245408E8DE24C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>490B6A9CE5DE4265AF1B6DCD</key>
+		<key>4EF707FFD4C14649A804794E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8495D55947D54F80BA1077F3</key>
+		<key>521169E457244B4480C24E21</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AEE420BFF1294961A03C2556</key>
+		<key>717681623C8D4720BA1B9FC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C478F2BBD7CF4D458F219288</key>
+		<key>A82FE605A5634019B335800D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F6FA41E5CE0E403D9BBC682C</key>
+		<key>B72B11CCCD95467BACF47507</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BB75657F3F424BC8A615D026</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BC15A23DE13F4B20885AB8CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

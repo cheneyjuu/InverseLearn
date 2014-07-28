@@ -9,6 +9,7 @@
 #import "LoginViewController.h"
 #import "UserViewModel.h"
 #import "UserModel.h"
+#import "FMDatabase.h"
 
 @interface LoginViewController (){
 }
@@ -32,13 +33,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"login view did load");
     [self customTextFieldStyle];
-//    [self customeButtonStyle];
-    
+    NSLog(@"navigation: %@", self.navigationController);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
     self.navigationController.navigationBarHidden = YES;
 }
 
@@ -100,15 +100,23 @@
         if ([[result objectForKey:@"erro"] integerValue] == 1) {
             UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[result objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
             [av show];
+        } else {
+            NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+            NSString *myUserId = [[result objectForKey:@"data"] objectForKey:@"ID"];
+            NSString *myUserName =[[result objectForKey:@"data"] objectForKey:@"UserName"];
+            [userDefault setObject:myUserId forKey:@kUserId];
+            [userDefault setObject:myUserName forKey:@kUserName];
+            [self dismissViewControllerAnimated:YES completion:nil];
         }
         
-        NSLog(@"userName: %@", result);
+        NSLog(@"!!FROM LOGIN ACTION -- result data: %@", [[result objectForKey:@"data"] objectForKey:@"ID"]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"error: %@", error);
     }];
 }
 
 /*
+ */
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -117,7 +125,6 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
 }
-*/
 
 #pragma mark -
 
@@ -137,9 +144,19 @@
 }
 
 - (IBAction)visitorAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)registerAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)insertUser{
+    
 }
 
 - (IBAction)aboutAction:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

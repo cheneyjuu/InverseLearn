@@ -12,6 +12,8 @@
 
 @interface LoginViewController : UIViewController
 
+@property (nonatomic, strong) UINavigationController *navigationController;
+
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
@@ -21,5 +23,6 @@
 - (IBAction)aboutAction:(id)sender;
 - (IBAction)loginAction:(id)sender;
 - (IBAction)visitorAction:(id)sender;
+- (IBAction)registerAction:(id)sender;
 
 @end

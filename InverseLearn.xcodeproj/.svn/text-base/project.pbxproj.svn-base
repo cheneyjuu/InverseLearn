@@ -18,6 +18,10 @@
 		645695221981E53000DEF14F /* selectedYes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456951E1981E53000DEF14F /* selectedYes@2x.png */; };
 		645695231981E53000DEF14F /* unSelectNo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456951F1981E53000DEF14F /* unSelectNo@2x.png */; };
 		645695241981E53000DEF14F /* unSelectYes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695201981E53000DEF14F /* unSelectYes@2x.png */; };
+		645695271982156800DEF14F /* AppCenterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645695261982156800DEF14F /* AppCenterViewController.m */; };
+		6456952A1982181D00DEF14F /* bg_project.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695281982181D00DEF14F /* bg_project.png */; };
+		6456952B1982181D00DEF14F /* btn_backLogin.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695291982181D00DEF14F /* btn_backLogin.png */; };
+		6456952D1982186900DEF14F /* bg_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456952C1982186900DEF14F /* bg_login.png */; };
 		645A2A90197F4D500066C901 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 645A2A8F197F4D500066C901 /* LoginViewController.m */; };
 		645A2A92197F84E60066C901 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645A2A91197F84E60066C901 /* QuartzCore.framework */; };
 		645AD9C719808A83002389D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645AD9C619808A83002389D9 /* UserModel.m */; };
@@ -58,6 +62,12 @@
 		64930BF419809FD1005FDD9F /* pic_line_sawtooth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BD319809FD1005FDD9F /* pic_line_sawtooth@2x.png */; };
 		64930BF71980A895005FDD9F /* AboutUsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64930BF61980A895005FDD9F /* AboutUsViewController.m */; };
 		64930BF91980AD92005FDD9F /* logo_login.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BF81980AD92005FDD9F /* logo_login.png */; };
+		6496CD941986013D002D1247 /* btn_class_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD8E1986013D002D1247 /* btn_class_press.png */; };
+		6496CD951986013D002D1247 /* btn_class.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD8F1986013D002D1247 /* btn_class.png */; };
+		6496CD961986013D002D1247 /* btn_info_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD901986013D002D1247 /* btn_info_press.png */; };
+		6496CD971986013D002D1247 /* btn_info.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD911986013D002D1247 /* btn_info.png */; };
+		6496CD981986013D002D1247 /* btn_key_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD921986013D002D1247 /* btn_key_press.png */; };
+		6496CD991986013D002D1247 /* btn_key.png in Resources */ = {isa = PBXBuildFile; fileRef = 6496CD931986013D002D1247 /* btn_key.png */; };
 		64E0FF55197E056E006B78BF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0FF54197E056E006B78BF /* Foundation.framework */; };
 		64E0FF57197E056E006B78BF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0FF56197E056E006B78BF /* CoreGraphics.framework */; };
 		64E0FF59197E056E006B78BF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64E0FF58197E056E006B78BF /* UIKit.framework */; };
@@ -105,6 +115,11 @@
 		6456951E1981E53000DEF14F /* selectedYes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "selectedYes@2x.png"; sourceTree = "<group>"; };
 		6456951F1981E53000DEF14F /* unSelectNo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unSelectNo@2x.png"; sourceTree = "<group>"; };
 		645695201981E53000DEF14F /* unSelectYes@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "unSelectYes@2x.png"; sourceTree = "<group>"; };
+		645695251982156800DEF14F /* AppCenterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppCenterViewController.h; sourceTree = "<group>"; };
+		645695261982156800DEF14F /* AppCenterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppCenterViewController.m; sourceTree = "<group>"; };
+		645695281982181D00DEF14F /* bg_project.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_project.png; sourceTree = "<group>"; };
+		645695291982181D00DEF14F /* btn_backLogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_backLogin.png; sourceTree = "<group>"; };
+		6456952C1982186900DEF14F /* bg_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_login.png; sourceTree = "<group>"; };
 		645A2A8E197F4D500066C901 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		645A2A8F197F4D500066C901 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		645A2A91197F84E60066C901 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -150,6 +165,12 @@
 		64930BF51980A895005FDD9F /* AboutUsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutUsViewController.h; sourceTree = "<group>"; };
 		64930BF61980A895005FDD9F /* AboutUsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutUsViewController.m; sourceTree = "<group>"; };
 		64930BF81980AD92005FDD9F /* logo_login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo_login.png; sourceTree = "<group>"; };
+		6496CD8E1986013D002D1247 /* btn_class_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_class_press.png; sourceTree = "<group>"; };
+		6496CD8F1986013D002D1247 /* btn_class.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_class.png; sourceTree = "<group>"; };
+		6496CD901986013D002D1247 /* btn_info_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_info_press.png; sourceTree = "<group>"; };
+		6496CD911986013D002D1247 /* btn_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_info.png; sourceTree = "<group>"; };
+		6496CD921986013D002D1247 /* btn_key_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_key_press.png; sourceTree = "<group>"; };
+		6496CD931986013D002D1247 /* btn_key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_key.png; sourceTree = "<group>"; };
 		64E0FF51197E056E006B78BF /* InverseLearn.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InverseLearn.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64E0FF54197E056E006B78BF /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		64E0FF56197E056E006B78BF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -244,6 +265,8 @@
 				64930BB019809CF0005FDD9F /* RegisterViewController.m */,
 				64930BF51980A895005FDD9F /* AboutUsViewController.h */,
 				64930BF61980A895005FDD9F /* AboutUsViewController.m */,
+				645695251982156800DEF14F /* AppCenterViewController.h */,
+				645695261982156800DEF14F /* AppCenterViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -260,6 +283,15 @@
 		64930BB219809F80005FDD9F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6496CD8E1986013D002D1247 /* btn_class_press.png */,
+				6496CD8F1986013D002D1247 /* btn_class.png */,
+				6496CD901986013D002D1247 /* btn_info_press.png */,
+				6496CD911986013D002D1247 /* btn_info.png */,
+				6496CD921986013D002D1247 /* btn_key_press.png */,
+				6496CD931986013D002D1247 /* btn_key.png */,
+				6456952C1982186900DEF14F /* bg_login.png */,
+				645695281982181D00DEF14F /* bg_project.png */,
+				645695291982181D00DEF14F /* btn_backLogin.png */,
 				6456951D1981E53000DEF14F /* selectedNo@2x.png */,
 				6456951E1981E53000DEF14F /* selectedYes@2x.png */,
 				6456951F1981E53000DEF14F /* unSelectNo@2x.png */,
@@ -494,26 +526,34 @@
 				64930BD619809FD1005FDD9F /* bg_loading-568h@2x.png in Resources */,
 				64930BD819809FD1005FDD9F /* bg_login-568h@2x.png in Resources */,
 				64930BD919809FD1005FDD9F /* bg_login@2x.png in Resources */,
+				6496CD951986013D002D1247 /* btn_class.png in Resources */,
 				64930BDD19809FD1005FDD9F /* btn_backLogin_press@2x.png in Resources */,
 				64930BDA19809FD1005FDD9F /* bg_project-568h@2x.png in Resources */,
 				64930BDF19809FD1005FDD9F /* btn_class_press@2x.png in Resources */,
 				64930BF119809FD1005FDD9F /* logo_404@2x.png in Resources */,
+				6496CD961986013D002D1247 /* btn_info_press.png in Resources */,
 				64930BE319809FD1005FDD9F /* btn_key_press@2x.png in Resources */,
 				64930BF91980AD92005FDD9F /* logo_login.png in Resources */,
 				64930BE419809FD1005FDD9F /* btn_key@2x.png in Resources */,
+				6496CD971986013D002D1247 /* btn_info.png in Resources */,
 				64E1BDF71980E37C000183E1 /* radio_checked.png in Resources */,
+				6496CD941986013D002D1247 /* btn_class_press.png in Resources */,
 				64930BEE19809FD1005FDD9F /* btn_yes@2x.png in Resources */,
 				64930BE119809FD1005FDD9F /* btn_info_press@2x.png in Resources */,
 				64930BD719809FD1005FDD9F /* bg_loading@2x.png in Resources */,
+				6496CD981986013D002D1247 /* btn_key_press.png in Resources */,
 				64930BEC19809FD1005FDD9F /* btn_toAbout_press@2x.png in Resources */,
 				64E0FF68197E056E006B78BF /* Main_iPhone.storyboard in Resources */,
 				64E1BDFA1980E37C000183E1 /* radio_unchecked@2x.png in Resources */,
 				6456951A1981DF8E00DEF14F /* unSelectNo.png in Resources */,
+				6456952A1982181D00DEF14F /* bg_project.png in Resources */,
+				6496CD991986013D002D1247 /* btn_key.png in Resources */,
 				645695241981E53000DEF14F /* unSelectYes@2x.png in Resources */,
 				64930BE219809FD1005FDD9F /* btn_info@2x.png in Resources */,
 				64930BE919809FD1005FDD9F /* btn_outAbout@2x.png in Resources */,
 				645695161981DF8E00DEF14F /* seg-bg-defualt.png in Resources */,
 				64930BF419809FD1005FDD9F /* pic_line_sawtooth@2x.png in Resources */,
+				6456952B1982181D00DEF14F /* btn_backLogin.png in Resources */,
 				64930BE519809FD1005FDD9F /* btn_logout_press@2x.png in Resources */,
 				64930BDB19809FD1005FDD9F /* bg_project@2x.png in Resources */,
 				64930BED19809FD1005FDD9F /* btn_toAbout@2x.png in Resources */,
@@ -535,6 +575,7 @@
 				645695191981DF8E00DEF14F /* selectedYes.png in Resources */,
 				64930BE019809FD1005FDD9F /* btn_class@2x.png in Resources */,
 				64930BF219809FD1005FDD9F /* logo_login@2x.png in Resources */,
+				6456952D1982186900DEF14F /* bg_login.png in Resources */,
 				64930BE819809FD1005FDD9F /* btn_outAbout_press@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -592,6 +633,7 @@
 				6456950E1981DD9400DEF14F /* CQSegmentControl.m in Sources */,
 				64E0FF6E197E056E006B78BF /* ViewController.m in Sources */,
 				64E0FF65197E056E006B78BF /* AppDelegate.m in Sources */,
+				645695271982156800DEF14F /* AppCenterViewController.m in Sources */,
 				64930BF71980A895005FDD9F /* AboutUsViewController.m in Sources */,
 				64E1BDF61980E37C000183E1 /* QRadioButton.m in Sources */,
 				64930BB119809CF0005FDD9F /* RegisterViewController.m in Sources */,

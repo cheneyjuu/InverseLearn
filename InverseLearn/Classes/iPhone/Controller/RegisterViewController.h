@@ -22,6 +22,7 @@
 @property (nonatomic, assign) int inSchool;
 @property (nonatomic, assign) int sex;
 @property (nonatomic, assign) int userId;
+@property (nonatomic, copy) NSString *userName;
 @property (nonatomic, copy) NSDictionary *userData;
 @property (nonatomic, copy) UserModel *userModel;
 

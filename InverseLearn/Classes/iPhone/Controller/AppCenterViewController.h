@@ -11,6 +11,4 @@
 
 @interface AppCenterViewController : UIViewController <RKTabViewDelegate>
 
-- (IBAction)backToLoginAction:(id)sender;
-
 @end

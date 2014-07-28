@@ -9,11 +9,17 @@ svn:wc:ra_dav:version-url
 V 101
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_submit_press@2x.png
 END
+btn_backLogin.png
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_backLogin.png
+END
 btn_class_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 100
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class_press@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class_press@2x.png
 END
 selectedNo@2x.png
 K 25
@@ -49,7 +55,7 @@ btn_key@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key@2x.png
 END
 btn_backLogin@2x.png
 K 25
@@ -69,6 +75,12 @@ svn:wc:ra_dav:version-url
 V 92
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_yes@2x.png
 END
+bg_project.png
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/bg_project.png
+END
 btn_outAbout@2x.png
 K 25
 svn:wc:ra_dav:version-url
@@ -87,11 +99,17 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/bg_project-568h@2x.png
 END
+bg_login.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/bg_login.png
+END
 btn_key_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 98
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key_press@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key_press@2x.png
 END
 bg_login-568h@2x.png
 K 25
@@ -153,11 +171,23 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_outAbout_press@2x.png
 END
+btn_key.png
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key.png
+END
 app_default@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 96
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/app_default@2x.png
+END
+btn_info.png
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info.png
 END
 bg_loading@2x.png
 K 25
@@ -189,11 +219,29 @@ svn:wc:ra_dav:version-url
 V 98
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/pic_breakLink@2x.png
 END
+btn_key_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_key_press.png
+END
 btn_info@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 93
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info@2x.png
+END
+btn_class.png
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class.png
+END
+btn_info_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info_press.png
 END
 bg_tabbar@2x.png
 K 25
@@ -217,7 +265,7 @@ btn_class@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 94
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class@2x.png
 END
 selectedYes@2x.png
 K 25
@@ -229,13 +277,19 @@ btn_info_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 99
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info_press@2x.png
+/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_info_press@2x.png
 END
 pic_line_sawtooth@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/pic_line_sawtooth@2x.png
+END
+btn_class_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/IOS/!svn/ver/9/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/btn_class_press.png
 END
 icon_radio_checked@2x.png
 K 25

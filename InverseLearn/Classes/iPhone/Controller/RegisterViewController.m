@@ -170,42 +170,51 @@
 }
 
 - (IBAction)registerAction:(id)sender {
-    //数据验证
+    // TODO: 数据验证
     if (_userNameTextField.text.length < 6 || _userNameTextField.text.length > 18){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"用户名必须在6-18个字符之间" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"用户名长度为6-18个字符" type:TSMessageNotificationTypeWarning];
     } else if (_passwordTextField.text.length < 6){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"密码必须大于6个字符" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"密码必须大于6个字符" type:TSMessageNotificationTypeWarning];
     } else if (![_rePasswordTextField.text isEqualToString:_passwordTextField.text]){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"两次密码输入不一致" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"两次密码输入不一致" type:TSMessageNotificationTypeWarning];
     } else if (_trueNameTextField.text.length < 2 || _trueNameTextField.text.length > 4){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"姓名必须在2-4个字符之间" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"姓名必须在2-4个字符之间" type:TSMessageNotificationTypeWarning];
     } else if (_phoneNumberTextField.text.length < 11){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"手机号码输入有误" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"手机号码输入有误" type:TSMessageNotificationTypeWarning];
     } else {
         // 数据验证通过后，调用注册接口
         AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+        _userName = _userNameTextField.text;
         NSDictionary *params = @{@"account":_userNameTextField.text, @"pwd":_passwordTextField.text, @"nickname":_trueNameTextField.text, @"phone":_phoneNumberTextField.text, @"sex":[NSNumber numberWithInt:_sex], @"type":@2, @"schoolid":@1};
         _userData = params;
         NSString *registerURL = [NSString stringWithFormat:@"%@/account/regist", baseUrl];
         [manager POST:registerURL parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if ([[responseObject objectForKey:@"erro"] intValue] == 0) {
-                _userId = [responseObject objectForKey:@"data"];
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"注册信息" message:[responseObject objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                av.tag = 1000;
-                [av show];
-                av.delegate = self;
+                
+                _userId = [[responseObject objectForKey:@"data"]intValue];
+                NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+                [userDefault setObject:[NSNumber numberWithInt:_userId] forKey:@kUserId];
+                [userDefault setObject:_userName forKey:@kUserName];
+                
+                [TSMessage showNotificationInViewController:self title:@"注册成功" subtitle:@"注册成功，并已自动登录！"
+                                                image:nil
+                                                type:TSMessageNotificationTypeSuccess
+                                                duration:3
+                                                   callback:nil
+                                                buttonTitle:nil
+                                             buttonCallback:nil
+                                                 atPosition:TSMessageNotificationPositionTop
+                                       canBeDismissedByUser:YES];
+                
+                [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
+                
             } else {
                 // 出错时提示用户
-                UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[responseObject objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-                [av show];
+                [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:[responseObject objectForKey:@"msg"] type:TSMessageNotificationTypeError];
             }
             NSLog(@"register response: %@", responseObject);
         } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+            [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"注册出错，请联系管理员！" type:TSMessageNotificationTypeError];
             NSLog(@"register failed: %@", operation);
         }];
     }
