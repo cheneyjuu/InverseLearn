@@ -6,14 +6,14 @@ END
 LoginViewController.m
 K 25
 svn:wc:ra_dav:version-url
-V 115
-/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/LoginViewController.m
+V 116
+/svn/IOS/!svn/ver/11/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/LoginViewController.m
 END
 AppCenterViewController.h
 K 25
 svn:wc:ra_dav:version-url
-V 119
-/svn/IOS/!svn/ver/8/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/AppCenterViewController.h
+V 120
+/svn/IOS/!svn/ver/11/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/AppCenterViewController.h
 END
 AboutUsViewController.h
 K 25
@@ -24,14 +24,14 @@ END
 RegisterViewController.h
 K 25
 svn:wc:ra_dav:version-url
-V 118
-/svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/RegisterViewController.h
+V 119
+/svn/IOS/!svn/ver/11/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/RegisterViewController.h
 END
 AppCenterViewController.m
 K 25
 svn:wc:ra_dav:version-url
-V 119
-/svn/IOS/!svn/ver/8/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/AppCenterViewController.m
+V 120
+/svn/IOS/!svn/ver/11/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/AppCenterViewController.m
 END
 AboutUsViewController.m
 K 25
@@ -48,6 +48,6 @@ END
 RegisterViewController.m
 K 25
 svn:wc:ra_dav:version-url
-V 118
-/svn/IOS/!svn/ver/7/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/RegisterViewController.m
+V 119
+/svn/IOS/!svn/ver/11/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Controller/RegisterViewController.m
 END

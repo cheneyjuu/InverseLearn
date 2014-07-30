@@ -9,11 +9,14 @@
 #import "LoginViewController.h"
 #import "UserViewModel.h"
 #import "UserModel.h"
-#import "FMDatabase.h"
+#import "AppCenterViewController.h"
+#import "RegisterViewController.h"
+#import "FBShimmeringView.h"
 
-@interface LoginViewController (){
-}
-
+@interface LoginViewController ()
+@property (nonatomic, weak) RegisterViewController *registerVC;
+@property (nonatomic, strong) FBShimmeringView *shimmeringView;
+@property (nonatomic, weak) NSTimer *myTimer;
 @end
 
 @implementation LoginViewController{
@@ -34,7 +37,8 @@
 {
     [super viewDidLoad];
     [self customTextFieldStyle];
-    NSLog(@"navigation: %@", self.navigationController);
+    _userType = 0;
+    NSLog(@"!!FROM LOGIN VIEW CONTROLLER -- navigation: %@", self.navigationController);
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -94,6 +98,7 @@
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{@"name":userName, @"pwd":password};
     [manager GET:loginUrl parameters:params success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         NSDictionary *result = responseObject;
         _userModel = [[UserModel alloc] initWithDict:[result objectForKey:@"data"]];
         
@@ -105,11 +110,18 @@
             NSString *myUserName =[[result objectForKey:@"data"] objectForKey:@"UserName"];
             [userDefault setObject:myUserId forKey:@kUserId];
             [userDefault setObject:myUserName forKey:@kUserName];
-            [self dismissViewControllerAnimated:YES completion:nil];
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+        
+        if (_shimmeringView) {
+            [_shimmeringView removeFromSuperview];
         }
         
         NSLog(@"!!FROM LOGIN ACTION -- result data: %@", [[result objectForKey:@"data"] objectForKey:@"ID"]);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        if (_shimmeringView) {
+            [_shimmeringView removeFromSuperview];
+        }
         NSLog(@"error: %@", error);
     }];
 }
@@ -127,8 +139,29 @@
 
 #pragma mark -
 
+-(void) shimmerLabel{
+    _shimmeringView = [[FBShimmeringView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:_shimmeringView];
+    
+    UILabel *loadingLabel = [[UILabel alloc] initWithFrame:_shimmeringView.bounds];
+    loadingLabel.textAlignment = NSTextAlignmentCenter;
+    UIFont *font = [UIFont fontWithName:@"HelveticaNeue" size:48];
+    loadingLabel.font = font;
+    loadingLabel.text = @"PHATENT";
+    loadingLabel.textColor = [UIColor blackColor];
+    
+    _shimmeringView.contentView = loadingLabel;
+    [_shimmeringView setBackgroundColor:UIColorFromRGB(0xF9E1A0)];
+    
+    // Start shimmering.
+    _shimmeringView.shimmering = YES;
+}
+
 #pragma mark login action
 - (IBAction)loginAction:(id)sender {
+    
+    IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager];
+    [keyboardManager resignFirstResponder];
     userName = _userNameTextField.text;
     password = _userPasswordTextField.text;
     if (userName.length <= 0 || userName.length < 6 || userName.length > 18) {
@@ -136,20 +169,23 @@
     } else if (password.length <= 0){
         [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"密码不能为空" type:TSMessageNotificationTypeWarning];
     } else {
-        [self requestLogin];
+        [self shimmerLabel];
+        _myTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(thenRequest) userInfo:nil repeats:NO];
     }
 }
 
+-(void)thenRequest{
+    _myTimer = nil;
+    [self requestLogin];
+}
+
 - (IBAction)visitorAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    _userType = 1000;
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)registerAction:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-}
-
--(void)insertUser{
-    
 }
 
 - (IBAction)aboutAction:(id)sender {

@@ -11,7 +11,7 @@
 #import "LoginViewController.h"
 
 @interface AppCenterViewController ()
-
+@property (nonatomic, weak) LoginViewController *loginVC;
 @end
 
 @implementation AppCenterViewController
@@ -29,6 +29,8 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = NO;
+    self.title = @"应用中心";
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefault objectForKey:@kUserId];
     if (userId) {
@@ -38,19 +40,31 @@
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    // IOS7 适配
+    if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
+        self.edgesForExtendedLayout = UIRectEdgeNone;
+    }
+    
     self.navigationController.navigationBarHidden = NO;
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefaults objectForKey:@kUserId];
-    NSLog(@"FROM APP CENTER -- USER ID:%@", userId);
-    if (userId == nil) {
-        UIBarButtonItem *backButtonItem = [self createBackButton];
-        self.navigationItem.leftBarButtonItem = backButtonItem;
-        [self performSegueWithIdentifier:@"LoginSBI" sender:self];
+    NSLog(@"FROM APP CENTER -- USER ID:%@ || NAVIGATION:%@", userId, self.navigationController);
+    if (_loginVC.userType == 1000) {
+        self.title = @"欢迎您";
     } else {
-        UIBarButtonItem *logoutButtonItem = [self createLogoutButton];
-        self.navigationItem.leftBarButtonItem = logoutButtonItem;
-        self.title = [userDefaults objectForKey:@kUserName];
+        if (userId == nil) {
+            UIBarButtonItem *backButtonItem = [self createBackButton];
+            self.navigationItem.leftBarButtonItem = backButtonItem;
+            if (_loginVC == nil) {
+                _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+            }
+            [self.navigationController pushViewController:_loginVC animated:YES];
+        } else {
+            UIBarButtonItem *logoutButtonItem = [self createLogoutButton];
+            self.navigationItem.leftBarButtonItem = logoutButtonItem;
+            self.title = [userDefaults objectForKey:@kUserName];
+        }
     }
 }
 
@@ -111,7 +125,7 @@
 
 - (void)backToLoginAction {
     //TODO: 返回到登录界面
-    [self performSegueWithIdentifier:@"LoginSBI" sender:self];
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 -(void)logout{
@@ -120,7 +134,11 @@
     NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
     [userDefault removeObjectForKey:@kUserId];
     [userDefault removeObjectForKey:@kUserName];
-    [self performSegueWithIdentifier:@"LoginSBI" sender:self];
+    
+    if (_loginVC == nil) {
+        _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    }
+    [self.navigationController pushViewController:_loginVC animated:YES];
 }
 #pragma mark - TabView delegate
 - (void)tabView:(RKTabView *)tabView tabBecameEnabledAtIndex:(int)index tab:(RKTabItem *)tabItem{
@@ -135,9 +153,6 @@
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
-    // 页面跳转之前，将navigationController赋值给LoginViewController
-    LoginViewController *vc = [segue destinationViewController];
-    vc.navigationController = self.navigationController;
 }
 
 - (void)didReceiveMemoryWarning

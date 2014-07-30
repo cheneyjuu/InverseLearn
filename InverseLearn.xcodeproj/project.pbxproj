@@ -89,6 +89,9 @@
 		64E1BDF81980E37C000183E1 /* radio_checked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF31980E37C000183E1 /* radio_checked@2x.png */; };
 		64E1BDF91980E37C000183E1 /* radio_unchecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF41980E37C000183E1 /* radio_unchecked.png */; };
 		64E1BDFA1980E37C000183E1 /* radio_unchecked@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64E1BDF51980E37C000183E1 /* radio_unchecked@2x.png */; };
+		64FA0E3619889BA1001A1E0E /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FA0E3519889BA1001A1E0E /* RootViewController.m */; };
+		64FA0E3919889D37001A1E0E /* DZNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FA0E3819889D37001A1E0E /* DZNavigationController.m */; };
+		64FA0E3C19889DCC001A1E0E /* DZMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FA0E3B19889DCC001A1E0E /* DZMenuViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -200,6 +203,12 @@
 		64E1BDF31980E37C000183E1 /* radio_checked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_checked@2x.png"; sourceTree = "<group>"; };
 		64E1BDF41980E37C000183E1 /* radio_unchecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = radio_unchecked.png; sourceTree = "<group>"; };
 		64E1BDF51980E37C000183E1 /* radio_unchecked@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "radio_unchecked@2x.png"; sourceTree = "<group>"; };
+		64FA0E3419889BA1001A1E0E /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		64FA0E3519889BA1001A1E0E /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		64FA0E3719889D37001A1E0E /* DZNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZNavigationController.h; sourceTree = "<group>"; };
+		64FA0E3819889D37001A1E0E /* DZNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZNavigationController.m; sourceTree = "<group>"; };
+		64FA0E3A19889DCC001A1E0E /* DZMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DZMenuViewController.h; sourceTree = "<group>"; };
+		64FA0E3B19889DCC001A1E0E /* DZMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DZMenuViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +268,12 @@
 		645A2A8C197F4CB90066C901 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				64FA0E3A19889DCC001A1E0E /* DZMenuViewController.h */,
+				64FA0E3B19889DCC001A1E0E /* DZMenuViewController.m */,
+				64FA0E3719889D37001A1E0E /* DZNavigationController.h */,
+				64FA0E3819889D37001A1E0E /* DZNavigationController.m */,
+				64FA0E3419889BA1001A1E0E /* RootViewController.h */,
+				64FA0E3519889BA1001A1E0E /* RootViewController.m */,
 				645A2A8E197F4D500066C901 /* LoginViewController.h */,
 				645A2A8F197F4D500066C901 /* LoginViewController.m */,
 				64930BAF19809CF0005FDD9F /* RegisterViewController.h */,
@@ -633,8 +648,11 @@
 				6456950E1981DD9400DEF14F /* CQSegmentControl.m in Sources */,
 				64E0FF6E197E056E006B78BF /* ViewController.m in Sources */,
 				64E0FF65197E056E006B78BF /* AppDelegate.m in Sources */,
+				64FA0E3919889D37001A1E0E /* DZNavigationController.m in Sources */,
+				64FA0E3C19889DCC001A1E0E /* DZMenuViewController.m in Sources */,
 				645695271982156800DEF14F /* AppCenterViewController.m in Sources */,
 				64930BF71980A895005FDD9F /* AboutUsViewController.m in Sources */,
+				64FA0E3619889BA1001A1E0E /* RootViewController.m in Sources */,
 				64E1BDF61980E37C000183E1 /* QRadioButton.m in Sources */,
 				64930BB119809CF0005FDD9F /* RegisterViewController.m in Sources */,
 				64E0FF61197E056E006B78BF /* main.m in Sources */,

@@ -206,7 +206,8 @@
                                                  atPosition:TSMessageNotificationPositionTop
                                        canBeDismissedByUser:YES];
                 
-                [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
+//                [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
+                [self.navigationController popToRootViewControllerAnimated:YES];
                 
             } else {
                 // 出错时提示用户
@@ -217,22 +218,6 @@
             [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"注册出错，请联系管理员！" type:TSMessageNotificationTypeError];
             NSLog(@"register failed: %@", operation);
         }];
-    }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    // tag=1000 在注册成功时，会弹出“注册成功”提醒，此alterView的tag=1000
-    if (alertView.tag == 1000) {
-        // 将用户信息写入UserModel,并将用户带入“应用中心”页面
-        NSMutableDictionary *dict = [[NSMutableDictionary alloc] init];
-        [dict setValue:[_userData objectForKey:@"account"] forKey:@"UserId"];
-        [dict setValue:[_userData objectForKey:@"pwd"] forKey:@"PassWord"];
-        [dict setValue:[_userData objectForKey:@"nickname"] forKey:@"UserName"];
-        [dict setValue:[_userData objectForKey:@"phone"] forKey:@"Mobile"];
-        [dict setValue:[_userData objectForKey:@"sex"] forKey:@"Sex"];
-        [dict setValue:[_userData objectForKey:@"schoolid"] forKey:@"SchoolID"];
-        _userModel = [[UserModel alloc] initWithDict:dict];
-        [self performSegueWithIdentifier:@"AppCenterSBI" sender:self];
     }
 }
 

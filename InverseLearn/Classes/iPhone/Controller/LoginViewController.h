@@ -12,13 +12,12 @@
 
 @interface LoginViewController : UIViewController
 
-@property (nonatomic, strong) UINavigationController *navigationController;
-
 @property (weak, nonatomic) IBOutlet UITextField *userNameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *userPasswordTextField;
 @property (weak, nonatomic) IBOutlet UIButton *loginButton;
 
 @property (nonatomic, readonly) UserModel *userModel;
+@property (nonatomic, assign) int userType;
 
 - (IBAction)aboutAction:(id)sender;
 - (IBAction)loginAction:(id)sender;

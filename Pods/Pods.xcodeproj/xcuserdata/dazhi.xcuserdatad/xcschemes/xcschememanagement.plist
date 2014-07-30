@@ -29,7 +29,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-REFrostedViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RKTabView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Shimmer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -52,47 +62,57 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>34EA7232083F458C90B9CD54</key>
+		<key>23CD6690E0194D1296D0C585</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>40A52BC0138245408E8DE24C</key>
+		<key>39597C239EC0433BB8B5C949</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4EF707FFD4C14649A804794E</key>
+		<key>5412ED6C9B6E40DB90AF0435</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>521169E457244B4480C24E21</key>
+		<key>7DFEBC60A16D4EE48D26240A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>717681623C8D4720BA1B9FC4</key>
+		<key>7E84941499754CD180B33008</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A82FE605A5634019B335800D</key>
+		<key>81DFE8355A344DBF80C705C8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B72B11CCCD95467BACF47507</key>
+		<key>8B77CEC5CE64411AB05B0241</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BB75657F3F424BC8A615D026</key>
+		<key>D6AD87CDFC72470ABC4F8E40</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC15A23DE13F4B20885AB8CC</key>
+		<key>E34C99E7BEC04998A83BB024</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EB626959C85D450CA999A09E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EEF6ED8236CE4F42BA56D1EE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

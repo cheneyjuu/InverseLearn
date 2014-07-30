@@ -287,6 +287,7 @@
                         <outlet property="sexView" destination="aK4-hn-6Lp" id="ZpX-AE-RQ2"/>
                         <outlet property="trueNameTextField" destination="Sb0-XH-pmy" id="p3s-4O-2AN"/>
                         <outlet property="userNameTextField" destination="3UC-Jz-oeq" id="6KR-Xr-ulo"/>
+                        <segue destination="ox6-Z7-hQw" kind="push" identifier="AppCenterSBI" id="bTt-On-bkX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jca-eK-uCq" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -316,26 +317,7 @@
                             <constraint firstItem="XC9-q7-6Lu" firstAttribute="top" secondItem="FMp-hG-Akt" secondAttribute="bottom" id="nGZ-SB-dhP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="R6X-4B-SJq">
-                        <barButtonItem key="leftBarButtonItem" width="120" style="done" id="8aK-xV-9l0">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aa6-T3-Elz">
-                                <rect key="frame" x="5" y="0.0" width="116" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <inset key="contentEdgeInsets" minX="-40" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="返回登录" image="btn_backLogin.png">
-                                    <color key="titleColor" red="0.97647058819999999" green="1" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backToLoginAction:" destination="ox6-Z7-hQw" eventType="touchUpInside" id="wJr-Kp-hxt"/>
-                                </connections>
-                            </button>
-                            <connections>
-                                <segue destination="vXZ-lx-hvc" kind="modal" identifier="BackToLoginSBI" id="1XG-Ir-oRc"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="R6X-4B-SJq"/>
                     <connections>
                         <segue destination="vXZ-lx-hvc" kind="modal" identifier="LoginSBI" id="dfE-pb-akD"/>
                     </connections>
@@ -389,7 +371,6 @@
     <resources>
         <image name="bg_login.png" width="320" height="480"/>
         <image name="bg_project.png" width="320" height="480"/>
-        <image name="btn_backLogin.png" width="44" height="44"/>
         <image name="btn_submit.png" width="193" height="34"/>
         <image name="btn_toAbout.png" width="10" height="12"/>
         <image name="logo_login.png" width="120" height="67"/>
@@ -400,7 +381,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="1XG-Ir-oRc"/>
-        <segue reference="f4x-8d-WAn"/>
+        <segue reference="bTt-On-bkX"/>
     </inferredMetricsTieBreakers>
 </document>

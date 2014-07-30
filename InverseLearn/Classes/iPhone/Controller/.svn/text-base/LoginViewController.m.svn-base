@@ -98,8 +98,7 @@
         _userModel = [[UserModel alloc] initWithDict:[result objectForKey:@"data"]];
         
         if ([[result objectForKey:@"erro"] integerValue] == 1) {
-            UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:[result objectForKey:@"msg"] delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-            [av show];
+            [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:[result objectForKey:@"msg"] type:TSMessageNotificationTypeWarning];
         } else {
             NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
             NSString *myUserId = [[result objectForKey:@"data"] objectForKey:@"ID"];
@@ -133,11 +132,9 @@
     userName = _userNameTextField.text;
     password = _userPasswordTextField.text;
     if (userName.length <= 0 || userName.length < 6 || userName.length > 18) {
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"用户名长度为6-18个字符" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"用户名长度为6-18个字符" type:TSMessageNotificationTypeWarning];
     } else if (password.length <= 0){
-        UIAlertView *av = [[UIAlertView alloc] initWithTitle:@"提示信息" message:@"密码不能为空" delegate:self cancelButtonTitle:@"确定" otherButtonTitles:nil, nil];
-        [av show];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"密码不能为空" type:TSMessageNotificationTypeWarning];
     } else {
         [self requestLogin];
     }
