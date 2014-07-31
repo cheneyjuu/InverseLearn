@@ -49,23 +49,27 @@
     
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     NSString *userId = [userDefaults objectForKey:@kUserId];
+    
     NSLog(@"FROM APP CENTER -- USER ID:%@ || NAVIGATION:%@", userId, self.navigationController);
-    if (_loginVC.userType == 1000) {
+    
+    if (_loginVC == nil) {
+        _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+    }
+    // 判断是不是游客身份
+    if (_loginVC.isVisitor) {
         self.title = @"欢迎您";
     } else {
-        if (userId == nil) {
-            UIBarButtonItem *backButtonItem = [self createBackButton];
-            self.navigationItem.leftBarButtonItem = backButtonItem;
-            if (_loginVC == nil) {
-                _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-            }
-            [self.navigationController pushViewController:_loginVC animated:YES];
+        // 假如用户没有登录过，并且不是以游客身份使用的话，则弹出登录页面
+        if (userId == NULL) {
+//            [self.navigationController pushViewController:_loginVC animated:YES];
+            [self presentViewController:_loginVC animated:YES completion:^{}];
         } else {
             UIBarButtonItem *logoutButtonItem = [self createLogoutButton];
             self.navigationItem.leftBarButtonItem = logoutButtonItem;
             self.title = [userDefaults objectForKey:@kUserName];
         }
     }
+    
 }
 
 #pragma mark - Create custom tabView and barButtonItem
@@ -131,9 +135,9 @@
 -(void)logout{
     // TODO: 用户登出
     // 用户注销后，删除用户基本信息，并返回到登录界面
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    [userDefault removeObjectForKey:@kUserId];
-    [userDefault removeObjectForKey:@kUserName];
+    
+    NSString *appDomain = [[NSBundle mainBundle] bundleIdentifier];
+    [[NSUserDefaults standardUserDefaults] removePersistentDomainForName:appDomain];
     
     if (_loginVC == nil) {
         _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];

@@ -23,5 +23,6 @@
 
 #define kUserId     "userId"
 #define kUserName   "userName"
+#define kUserHead   "userHead"
 
 static const NSString *baseUrl = @"http://192.168.5.151:14133";

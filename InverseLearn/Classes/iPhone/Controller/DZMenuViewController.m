@@ -10,6 +10,7 @@
 #import "AppCenterViewController.h"
 #import "UIViewController+REFrostedViewController.h"
 #import "DZNavigationController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface DZMenuViewController ()
 
@@ -17,9 +18,9 @@
 
 @implementation DZMenuViewController
 
-- (void)viewDidLoad
+- (void)viewWillAppear:(BOOL)animated
 {
-    [super viewDidLoad];
+    [super viewWillAppear:animated];
     
     self.tableView.separatorColor = [UIColor colorWithRed:150/255.0f green:161/255.0f blue:177/255.0f alpha:1.0f];
     self.tableView.delegate = self;
@@ -30,7 +31,18 @@
         UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 0, 184.0f)];
         UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 40, 100, 100)];
         imageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleRightMargin;
-        imageView.image = [UIImage imageNamed:@"avatar.jpg"];
+        NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+        
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
+        if ([userDefault objectForKey:@kUserId] != NULL) {
+            NSURL *url = [NSURL URLWithString:[userDefault objectForKey:@kUserHead]];
+            [imageView setImageWithURL:url];
+            label.text = [userDefault objectForKey:@kUserName];
+        } else {
+            imageView.image = [UIImage imageNamed:@""];
+            label.text = @"请先登录";
+        }
+        
         imageView.layer.masksToBounds = YES;
         imageView.layer.cornerRadius = 50.0;
         imageView.layer.borderColor = [UIColor whiteColor].CGColor;
@@ -39,8 +51,6 @@
         imageView.layer.shouldRasterize = YES;
         imageView.clipsToBounds = YES;
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(0, 150, 0, 24)];
-        label.text = @"请先登录";
         label.font = [UIFont fontWithName:@"HelveticaNeue" size:21];
         label.backgroundColor = [UIColor clearColor];
         label.textColor = [UIColor colorWithRed:62/255.0f green:68/255.0f blue:75/255.0f alpha:1.0f];

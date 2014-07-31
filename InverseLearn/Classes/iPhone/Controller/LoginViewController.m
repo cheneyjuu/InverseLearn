@@ -37,7 +37,7 @@
 {
     [super viewDidLoad];
     [self customTextFieldStyle];
-    _userType = 0;
+    _isVisitor = NO;
     NSLog(@"!!FROM LOGIN VIEW CONTROLLER -- navigation: %@", self.navigationController);
 }
 
@@ -110,14 +110,16 @@
             NSString *myUserName =[[result objectForKey:@"data"] objectForKey:@"UserName"];
             [userDefault setObject:myUserId forKey:@kUserId];
             [userDefault setObject:myUserName forKey:@kUserName];
+            [userDefault setObject:[[result objectForKey:@"data"] objectForKey:@"Head"] forKey:@kUserHead];
+        }
+        
+        [UIView transitionWithView:_shimmeringView duration:1 options:UIViewAnimationOptionTransitionNone animations:^{
+            _shimmeringView.alpha = 0.75f;
+        } completion:^(BOOL finished) {
             [self.navigationController popViewControllerAnimated:NO];
-        }
-        
-        if (_shimmeringView) {
             [_shimmeringView removeFromSuperview];
-        }
-        
-        NSLog(@"!!FROM LOGIN ACTION -- result data: %@", [[result objectForKey:@"data"] objectForKey:@"ID"]);
+        }];
+        NSLog(@"!!FROM LOGIN ACTION -- result data: %@", result);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (_shimmeringView) {
             [_shimmeringView removeFromSuperview];
@@ -170,17 +172,12 @@
         [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"密码不能为空" type:TSMessageNotificationTypeWarning];
     } else {
         [self shimmerLabel];
-        _myTimer = [NSTimer scheduledTimerWithTimeInterval:2 target:self selector:@selector(thenRequest) userInfo:nil repeats:NO];
+        [self requestLogin];
     }
 }
 
--(void)thenRequest{
-    _myTimer = nil;
-    [self requestLogin];
-}
-
 - (IBAction)visitorAction:(id)sender {
-    _userType = 1000;
+    _isVisitor = YES;
     [self.navigationController popViewControllerAnimated:YES];
 }
 

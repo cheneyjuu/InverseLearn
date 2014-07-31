@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1A788BB36EAF46AEAF6F1C9B /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DAB9A33884140239E6B88D7 /* libPods.a */; };
+		644B28381989D4FC0027809F /* CoreAnimationEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = 644B28371989D4FC0027809F /* CoreAnimationEffect.m */; };
 		6456950E1981DD9400DEF14F /* CQSegmentControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 6456950D1981DD9400DEF14F /* CQSegmentControl.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		645695161981DF8E00DEF14F /* seg-bg-defualt.png in Resources */ = {isa = PBXBuildFile; fileRef = 6456950F1981DF8E00DEF14F /* seg-bg-defualt.png */; };
 		645695171981DF8E00DEF14F /* selectedNo.png in Resources */ = {isa = PBXBuildFile; fileRef = 645695101981DF8E00DEF14F /* selectedNo.png */; };
@@ -107,6 +108,8 @@
 /* Begin PBXFileReference section */
 		1DAB9A33884140239E6B88D7 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE7A09A5397454781D9C1FE /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		644B28361989D4FC0027809F /* CoreAnimationEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreAnimationEffect.h; sourceTree = "<group>"; };
+		644B28371989D4FC0027809F /* CoreAnimationEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreAnimationEffect.m; sourceTree = "<group>"; };
 		6456950C1981DD9400DEF14F /* CQSegmentControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CQSegmentControl.h; sourceTree = "<group>"; };
 		6456950D1981DD9400DEF14F /* CQSegmentControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CQSegmentControl.m; sourceTree = "<group>"; };
 		6456950F1981DF8E00DEF14F /* seg-bg-defualt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "seg-bg-defualt.png"; sourceTree = "<group>"; };
@@ -237,6 +240,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		644B28351989D4D30027809F /* common */ = {
+			isa = PBXGroup;
+			children = (
+				644B28361989D4FC0027809F /* CoreAnimationEffect.h */,
+				644B28371989D4FC0027809F /* CoreAnimationEffect.m */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		645A2A89197F4A770066C901 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
@@ -248,6 +260,7 @@
 		645A2A8A197F4A950066C901 /* iPhone */ = {
 			isa = PBXGroup;
 			children = (
+				644B28351989D4D30027809F /* common */,
 				64E1BDEC1980DCEC000183E1 /* Custom */,
 				645A2A8D197F4CCD0066C901 /* ViewModel */,
 				645A2A8C197F4CB90066C901 /* Controller */,
@@ -649,6 +662,7 @@
 				64E0FF6E197E056E006B78BF /* ViewController.m in Sources */,
 				64E0FF65197E056E006B78BF /* AppDelegate.m in Sources */,
 				64FA0E3919889D37001A1E0E /* DZNavigationController.m in Sources */,
+				644B28381989D4FC0027809F /* CoreAnimationEffect.m in Sources */,
 				64FA0E3C19889DCC001A1E0E /* DZMenuViewController.m in Sources */,
 				645695271982156800DEF14F /* AppCenterViewController.m in Sources */,
 				64930BF71980A895005FDD9F /* AboutUsViewController.m in Sources */,
