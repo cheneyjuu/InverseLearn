@@ -10,8 +10,8 @@ https://jc@192.168.5.20:443/svn/IOS
 2014-07-25T03:20:29.134815Z
 6
 jc
-
-
+has-props
+has-prop-mods
 
 
 
@@ -400,6 +400,40 @@ has-props
 
 2017
 
+btn_login.png
+file
+12
+
+
+
+2014-08-06T06:49:58.000000Z
+0b45f2fe6314c0d21360c0705df90c37
+2014-08-06T09:15:39.463212Z
+12
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1482
+
 btn_yes@2x.png
 file
 
@@ -536,40 +570,6 @@ has-props
 
 2211
 
-bg_login.png
-file
-9
-
-
-
-2014-07-25T04:45:21.000000Z
-fb1bf6e6db46a8281e26faf3d56dcd27
-2014-07-28T04:00:37.838856Z
-9
-jc
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-79260
-
 bg_project-568h@2x.png
 file
 
@@ -603,6 +603,40 @@ has-props
 
 
 262649
+
+bg_login.png
+file
+9
+
+
+
+2014-07-25T04:45:21.000000Z
+fb1bf6e6db46a8281e26faf3d56dcd27
+2014-07-28T04:00:37.838856Z
+9
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+79260
 
 btn_key_press@2x.png
 file
@@ -638,6 +672,40 @@ has-props
 
 3911
 
+btn_backLogin_press@2x.png
+file
+
+
+
+
+2014-07-24T01:53:19.000000Z
+61849c9fb7cae3c81eb087d8278f923a
+2014-07-25T03:20:29.134815Z
+6
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2332
+
 bg_login-568h@2x.png
 file
 
@@ -672,16 +740,16 @@ has-props
 
 226824
 
-btn_backLogin_press@2x.png
+app_default.png
 file
+12
 
 
 
-
-2014-07-24T01:53:19.000000Z
-61849c9fb7cae3c81eb087d8278f923a
-2014-07-25T03:20:29.134815Z
-6
+2014-08-05T06:01:45.000000Z
+408eebac9ecaa1605a48242fb4a25dc2
+2014-08-06T09:15:39.463212Z
+12
 jc
 has-props
 
@@ -704,7 +772,7 @@ has-props
 
 
 
-2332
+4203
 
 selectedNo.png
 file
@@ -774,40 +842,6 @@ has-props
 
 2623
 
-logo_login.png
-file
-
-
-
-
-2014-07-24T08:44:30.000000Z
-230e2107dd807d3a58a7f21eda884f52
-2014-07-25T03:20:29.134815Z
-6
-jc
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-7284
-
 bg_project@2x.png
 file
 
@@ -841,6 +875,40 @@ has-props
 
 
 248718
+
+logo_login.png
+file
+
+
+
+
+2014-07-24T08:44:30.000000Z
+230e2107dd807d3a58a7f21eda884f52
+2014-07-25T03:20:29.134815Z
+6
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+7284
 
 btn_no@2x.png
 file
@@ -876,40 +944,6 @@ has-props
 
 3588
 
-btn_toAbout@2x.png
-file
-
-
-
-
-2014-07-24T02:52:39.000000Z
-5161ccd247b5a9ce471114f08cd28d16
-2014-07-25T03:20:29.134815Z
-6
-jc
-has-props
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-20465
-
 bg_login@2x.png
 file
 
@@ -944,16 +978,16 @@ has-props
 
 205216
 
-btn_key.png
+btn_toAbout@2x.png
 file
-9
 
 
 
-2014-07-28T01:18:06.000000Z
-fee023829a31e7387bdce460a1ed74a3
-2014-07-28T04:00:37.838856Z
-9
+
+2014-07-24T02:52:39.000000Z
+5161ccd247b5a9ce471114f08cd28d16
+2014-07-25T03:20:29.134815Z
+6
 jc
 has-props
 
@@ -976,7 +1010,7 @@ has-props
 
 
 
-2462
+20465
 
 btn_outAbout_press@2x.png
 file
@@ -1012,14 +1046,14 @@ has-props
 
 1293
 
-btn_info.png
+btn_key.png
 file
 9
 
 
 
-2014-07-28T01:18:48.000000Z
-2221e1422e9f9d6ec68c68b887e400d6
+2014-07-28T01:18:06.000000Z
+fee023829a31e7387bdce460a1ed74a3
 2014-07-28T04:00:37.838856Z
 9
 jc
@@ -1044,7 +1078,7 @@ has-props
 
 
 
-2185
+2462
 
 app_default@2x.png
 file
@@ -1079,6 +1113,40 @@ has-props
 
 
 6865
+
+btn_info.png
+file
+9
+
+
+
+2014-07-28T01:18:48.000000Z
+2221e1422e9f9d6ec68c68b887e400d6
+2014-07-28T04:00:37.838856Z
+9
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2185
 
 bg_loading@2x.png
 file
@@ -1386,6 +1454,43 @@ has-props
 
 2314
 
+pic_line_sawtooth.png
+file
+12
+
+
+
+2014-08-05T05:58:59.000000Z
+085895c9895153ab948440440bdc95ee
+2014-08-06T09:15:39.463212Z
+12
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1106
+
+calculation
+dir
+
 bg_tabbar@2x.png
 file
 
@@ -1459,7 +1564,7 @@ file
 
 
 
-
+delete
 2014-07-24T02:33:54.000000Z
 b82dc7ce2a0588b02be206b2204aaac5
 2014-07-25T03:20:29.134815Z
@@ -1658,6 +1763,40 @@ has-props
 
 2554
 
+btn_login@2x.png
+file
+12
+
+
+
+2014-07-24T02:33:54.000000Z
+b82dc7ce2a0588b02be206b2204aaac5
+2014-08-06T09:15:39.463212Z
+12
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16104
+
 icon_radio_checked@2x.png
 file
 
@@ -1793,4 +1932,38 @@ has-props
 
 
 2291
+
+app_mentalArithmetic.png
+file
+12
+
+
+
+2014-08-04T03:22:51.000000Z
+ba2cdc55d674004721001bbff032dc4c
+2014-08-06T09:15:39.463212Z
+12
+jc
+has-props
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5212
 

@@ -29,12 +29,22 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-MSDynamicsDrawerViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-REFrostedViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-RKTabView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-Reveal-iOS-SDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -62,57 +72,67 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>23CD6690E0194D1296D0C585</key>
+		<key>294DF547093E407C8BAC10AC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>39597C239EC0433BB8B5C949</key>
+		<key>3332B45BFDC94DE58A7145E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5412ED6C9B6E40DB90AF0435</key>
+		<key>53FEBBBA518E4EED89F1DCAF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7DFEBC60A16D4EE48D26240A</key>
+		<key>5815B5B34B2246908140021A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E84941499754CD180B33008</key>
+		<key>686D49E46B9C490FB1F8DDC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>81DFE8355A344DBF80C705C8</key>
+		<key>796DD3104AF8446FAC7101C7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8B77CEC5CE64411AB05B0241</key>
+		<key>9160014BBE464DCC87FB2B06</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D6AD87CDFC72470ABC4F8E40</key>
+		<key>B505FE072830451A9341F5F8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E34C99E7BEC04998A83BB024</key>
+		<key>B60C6DC4BE224344B93EC32D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EB626959C85D450CA999A09E</key>
+		<key>CFDCBF67AC6D4DFF95A5802C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EEF6ED8236CE4F42BA56D1EE</key>
+		<key>D2AF98F8035B478F8504DDF7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E12541E9C4594BA2BA4E0056</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E8B69754408940178212927C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

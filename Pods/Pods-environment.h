@@ -84,6 +84,12 @@
 #define COCOAPODS_VERSION_MINOR_MBProgressHUD 8
 #define COCOAPODS_VERSION_PATCH_MBProgressHUD 0
 
+// MSDynamicsDrawerViewController
+#define COCOAPODS_POD_AVAILABLE_MSDynamicsDrawerViewController
+#define COCOAPODS_VERSION_MAJOR_MSDynamicsDrawerViewController 1
+#define COCOAPODS_VERSION_MINOR_MSDynamicsDrawerViewController 5
+#define COCOAPODS_VERSION_PATCH_MSDynamicsDrawerViewController 1
+
 // REFrostedViewController
 #define COCOAPODS_POD_AVAILABLE_REFrostedViewController
 #define COCOAPODS_VERSION_MAJOR_REFrostedViewController 2
@@ -95,6 +101,12 @@
 #define COCOAPODS_VERSION_MAJOR_RKTabView 1
 #define COCOAPODS_VERSION_MINOR_RKTabView 0
 #define COCOAPODS_VERSION_PATCH_RKTabView 1
+
+// Reveal-iOS-SDK
+#define COCOAPODS_POD_AVAILABLE_Reveal_iOS_SDK
+#define COCOAPODS_VERSION_MAJOR_Reveal_iOS_SDK 1
+#define COCOAPODS_VERSION_MINOR_Reveal_iOS_SDK 0
+#define COCOAPODS_VERSION_PATCH_Reveal_iOS_SDK 4
 
 // Shimmer
 #define COCOAPODS_POD_AVAILABLE_Shimmer

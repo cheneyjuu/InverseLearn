@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "RKTabView.h"
+//#import "RKTabView.h"
 
-@interface AppCenterViewController : UIViewController <RKTabViewDelegate>
+@interface AppCenterViewController : UIViewController
+//<RKTabViewDelegate>
 
 @end

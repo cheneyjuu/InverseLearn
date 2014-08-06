@@ -9,6 +9,7 @@
 #import "RegisterViewController.h"
 #import "CQSegmentControl.h"
 #import "UserModel.h"
+#import "LoginViewController.h"
 
 @interface RegisterViewController ()
 
@@ -28,7 +29,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"REGISTER VIEW CONTROLLER");
+    NSLog(@"!!FROM REGISTER VIEW CONTROLLER -- navigation: %@", self.navigationController);
     // Do any additional setup after loading the view.
     self.title = @"用户注册";
     self.navigationController.navigationBarHidden = NO;

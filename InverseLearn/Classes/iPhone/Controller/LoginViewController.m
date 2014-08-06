@@ -92,8 +92,13 @@
 }
 
 #pragma mark -
-
+/**
+ *
+ * @param 用户名(name),密码(pwd)
+ *
+ */
 - (void) requestLogin{
+    // TODO:  从服务器请求数据
     NSString *loginUrl = [NSString stringWithFormat:@"%@/account/login", baseUrl];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
     NSDictionary *params = @{@"name":userName, @"pwd":password};
@@ -101,7 +106,9 @@
         
         NSDictionary *result = responseObject;
         _userModel = [[UserModel alloc] initWithDict:[result objectForKey:@"data"]];
-        
+        /**
+         * 从服务器获取erro字段，如果erro不为0，则代表操作不成功。
+         */
         if ([[result objectForKey:@"erro"] integerValue] == 1) {
             [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:[result objectForKey:@"msg"] type:TSMessageNotificationTypeWarning];
         } else {
@@ -111,14 +118,11 @@
             [userDefault setObject:myUserId forKey:@kUserId];
             [userDefault setObject:myUserName forKey:@kUserName];
             [userDefault setObject:[[result objectForKey:@"data"] objectForKey:@"Head"] forKey:@kUserHead];
+            
+            [self.navigationController popViewControllerAnimated:NO];
+            [self dismissViewControllerAnimated:YES completion:^{}];
         }
         
-        [UIView transitionWithView:_shimmeringView duration:1 options:UIViewAnimationOptionTransitionNone animations:^{
-            _shimmeringView.alpha = 0.75f;
-        } completion:^(BOOL finished) {
-            [self.navigationController popViewControllerAnimated:NO];
-            [_shimmeringView removeFromSuperview];
-        }];
         NSLog(@"!!FROM LOGIN ACTION -- result data: %@", result);
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         if (_shimmeringView) {
@@ -157,11 +161,19 @@
     
     // Start shimmering.
     _shimmeringView.shimmering = YES;
+    
+    // animation
+    CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+    animation.duration = 0.75;
+    animation.fromValue = @1;
+    animation.fillMode = kCAFillModeRemoved;
+    _shimmeringView.layer.opacity = 0.0;
+    [_shimmeringView.layer addAnimation:animation forKey:nil];
 }
 
 #pragma mark login action
 - (IBAction)loginAction:(id)sender {
-    
+//    [self thirdArithmetic:@[@"+", @"-", @"*", @"/"] quantity:20 topicRange:100];
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager];
     [keyboardManager resignFirstResponder];
     userName = _userNameTextField.text;
@@ -178,15 +190,7 @@
 
 - (IBAction)visitorAction:(id)sender {
     _isVisitor = YES;
-    [self.navigationController popViewControllerAnimated:YES];
-}
-
-- (IBAction)registerAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
-}
-
-- (IBAction)aboutAction:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController dismissViewControllerAnimated:YES completion:^{}];
 }
 
 - (void)didReceiveMemoryWarning

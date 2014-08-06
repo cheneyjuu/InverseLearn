@@ -7,11 +7,12 @@
 //
 
 #import "AppCenterViewController.h"
-#import "RKTabView.h"
 #import "LoginViewController.h"
+#import "OralCalculationViewController.h"
 
 @interface AppCenterViewController ()
-@property (nonatomic, weak) LoginViewController *loginVC;
+@property (nonatomic, strong) UINavigationController *myNav;
+@property (nonatomic, strong) LoginViewController *loginVC;
 @end
 
 @implementation AppCenterViewController
@@ -29,13 +30,13 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.navigationController.navigationBarHidden = NO;
-    self.title = @"应用中心";
-    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-    NSString *userId = [userDefault objectForKey:@kUserId];
-    if (userId) {
-        [self createTabView];
-    }
+//    self.title = @"应用中心";
+//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
+//    NSString *userId = [userDefault objectForKey:@kUserId];
+//    if (userId) {
+//        [self createTabView];
+//    }
+    NSLog(@"APP CENTER VIEW CONTROLLER DID LOAD");
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -44,52 +45,58 @@
     if ([self respondsToSelector:@selector(setEdgesForExtendedLayout:)]) {
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
-    
     self.navigationController.navigationBarHidden = NO;
+    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x6F2A22)];
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    NSString *userId = [userDefaults objectForKey:@kUserId];
+//    RootViewController *rootVC = [[RootViewController alloc] init];
+//    [rootVC hideMenuViewController];
     
-    NSLog(@"FROM APP CENTER -- USER ID:%@ || NAVIGATION:%@", userId, self.navigationController);
+//    self.navigationController.navigationBarHidden = NO;
     
-    if (_loginVC == nil) {
-        _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
-    }
-    // 判断是不是游客身份
-    if (_loginVC.isVisitor) {
-        self.title = @"欢迎您";
-    } else {
-        // 假如用户没有登录过，并且不是以游客身份使用的话，则弹出登录页面
-        if (userId == NULL) {
-//            [self.navigationController pushViewController:_loginVC animated:YES];
-            [self presentViewController:_loginVC animated:YES completion:^{}];
-        } else {
-            UIBarButtonItem *logoutButtonItem = [self createLogoutButton];
-            self.navigationItem.leftBarButtonItem = logoutButtonItem;
-            self.title = [userDefaults objectForKey:@kUserName];
-        }
-    }
+//    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+//    NSString *userId = [userDefaults objectForKey:@kUserId];
+//    
+//    NSLog(@"FROM APP CENTER -- USER ID:%@ || NAVIGATION:%@", userId, self.navigationController);
+//    
+//    if (_loginVC == nil) {
+//        _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
+//    }
+//    // 判断是不是游客身份
+//    if (_loginVC.isVisitor) {
+//        self.title = @"欢迎您";
+//    } else {
+//        // 假如用户没有登录过，并且不是以游客身份使用的话，则弹出登录页面
+//        if (userId == NULL) {
+//            _myNav = [[UINavigationController alloc] initWithRootViewController:_loginVC];
+//            NSLog(@"FROM APP CENTER -- MY NAVIGATION:%@", _myNav);
+//            [self presentViewController:_myNav animated:YES completion:^{}];
+//        } else {
+//            UIBarButtonItem *logoutButtonItem = [self createLogoutButton];
+//            self.navigationItem.leftBarButtonItem = logoutButtonItem;
+//            self.title = [userDefaults objectForKey:@kUserName];
+//        }
+//    }
     
 }
 
-#pragma mark - Create custom tabView and barButtonItem
--(void)createTabView{
-    // TODO: 创建TabBar
-    RKTabItem *tabItemPassword = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_key_press.png"] imageDisabled:[UIImage imageNamed:@"btn_key.png"]];
-    RKTabItem *tabItemInfo = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_info_press.png"] imageDisabled:[UIImage imageNamed:@"btn_info.png"]];
-    RKTabItem *tabItemClasses = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_class_press.png"] imageDisabled:[UIImage imageNamed:@"btn_class.png"]];
-    tabItemPassword.tabState = TabStateEnabled;
-    
-    NSArray *items = @[tabItemPassword, tabItemInfo, tabItemClasses];
-    CGRect frame = self.view.frame;
-    frame.size.height = 54;
-    frame.origin.y = self.view.frame.size.height - 44;
-    RKTabView *tabView = [[RKTabView alloc] initWithFrame:frame andTabItems:items];
-    tabView.delegate = self;
-    [tabView setBackgroundColor:UIColorFromRGB(0xF9E1A0)];
-    [tabView setBounds:CGRectMake(0, 10, self.view.frame.size.width, 44)];
-    [self.view addSubview:tabView];
-}
+//#pragma mark - Create custom tabView and barButtonItem
+//-(void)createTabView{
+//    // TODO: 创建TabBar
+//    RKTabItem *tabItemPassword = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_key_press.png"] imageDisabled:[UIImage imageNamed:@"btn_key.png"]];
+//    RKTabItem *tabItemInfo = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_info_press.png"] imageDisabled:[UIImage imageNamed:@"btn_info.png"]];
+//    RKTabItem *tabItemClasses = [RKTabItem createUsualItemWithImageEnabled:[UIImage imageNamed:@"btn_class_press.png"] imageDisabled:[UIImage imageNamed:@"btn_class.png"]];
+//    tabItemPassword.tabState = TabStateEnabled;
+//    
+//    NSArray *items = @[tabItemPassword, tabItemInfo, tabItemClasses];
+//    CGRect frame = self.view.frame;
+//    frame.size.height = 54;
+//    frame.origin.y = self.view.frame.size.height - 44;
+//    RKTabView *tabView = [[RKTabView alloc] initWithFrame:frame andTabItems:items];
+//    tabView.delegate = self;
+//    [tabView setBackgroundColor:UIColorFromRGB(0xF9E1A0)];
+//    [tabView setBounds:CGRectMake(0, 10, self.view.frame.size.width, 44)];
+//    [self.view addSubview:tabView];
+//}
 
 -(UIBarButtonItem*) createBackButton{
     // TODO: 返回到登录界面按钮
@@ -142,16 +149,20 @@
     if (_loginVC == nil) {
         _loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"loginController"];
     }
-    [self.navigationController pushViewController:_loginVC animated:YES];
-}
-#pragma mark - TabView delegate
-- (void)tabView:(RKTabView *)tabView tabBecameEnabledAtIndex:(int)index tab:(RKTabItem *)tabItem{
-    
+    if (_myNav == nil) {
+        _myNav = [[UINavigationController alloc] initWithRootViewController:_loginVC];
+    }
+    [self presentViewController:_myNav animated:YES completion:^{}];
 }
 
-- (void)tabView:(RKTabView *)tabView tabBecameDisabledAtIndex:(int)index tab:(RKTabItem *)tabItem{
-    
-}
+//#pragma mark - TabView delegate
+//- (void)tabView:(RKTabView *)tabView tabBecameEnabledAtIndex:(int)index tab:(RKTabItem *)tabItem{
+//    
+//}
+//
+//- (void)tabView:(RKTabView *)tabView tabBecameDisabledAtIndex:(int)index tab:(RKTabItem *)tabItem{
+//    
+//}
 
 #pragma mark - Navigation
 

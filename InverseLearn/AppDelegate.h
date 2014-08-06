@@ -6,10 +6,11 @@
 //  Copyright (c) 2014年 DaZhi. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+@class MSDynamicsDrawerViewController;
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
+@property MSDynamicsDrawerViewController *dynamicsDrawerViewController;
 
 @end
