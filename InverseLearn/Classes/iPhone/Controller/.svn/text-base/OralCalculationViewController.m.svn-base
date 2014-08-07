@@ -29,7 +29,9 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x2FA4CA)];
+    if (OSVersionIsAtLeastiOS7()) {
+        [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x2FA4CA)];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{

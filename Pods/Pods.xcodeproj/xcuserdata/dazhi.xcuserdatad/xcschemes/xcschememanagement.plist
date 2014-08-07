@@ -29,12 +29,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-MSDynamicsDrawerViewController.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-REFrostedViewController.xcscheme</key>
+		<key>Pods-MMDrawerController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -72,67 +67,62 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>294DF547093E407C8BAC10AC</key>
+		<key>05C3FFAA5ED942C28E111E17</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3332B45BFDC94DE58A7145E7</key>
+		<key>0BF20F3CCD444337BAF587D8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>53FEBBBA518E4EED89F1DCAF</key>
+		<key>1195FF8711F540CE87AD142F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5815B5B34B2246908140021A</key>
+		<key>131E1A721CFA46BBAFC72959</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>686D49E46B9C490FB1F8DDC9</key>
+		<key>166BBFC0EB45432D893FDEB6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>796DD3104AF8446FAC7101C7</key>
+		<key>57E4ABC6442346D19D315B49</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9160014BBE464DCC87FB2B06</key>
+		<key>6B70F776A282435AB46B4133</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B505FE072830451A9341F5F8</key>
+		<key>7B4F3429C158419AAE8BFFB3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B60C6DC4BE224344B93EC32D</key>
+		<key>9C4039B3361F433786C836F6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CFDCBF67AC6D4DFF95A5802C</key>
+		<key>A4AE1C20E2C349EC88394C15</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D2AF98F8035B478F8504DDF7</key>
+		<key>AD3828A1376249C886E31433</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E12541E9C4594BA2BA4E0056</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E8B69754408940178212927C</key>
+		<key>B3BFD887C4F248E992109F98</key>
 		<dict>
 			<key>primary</key>
 			<true/>

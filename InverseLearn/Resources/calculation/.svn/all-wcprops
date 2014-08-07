@@ -9,6 +9,12 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/bg_text.png
 END
+btn_slider_left.png
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IOS/!svn/ver/14/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_slider_left.png
+END
 btn_8_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
@@ -99,17 +105,17 @@ svn:wc:ra_dav:version-url
 V 110
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_contacts@2x.png
 END
-btn_next_press.png
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_next_press.png
-END
 btn_5_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_5_press@2x.png
+END
+btn_next_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_next_press.png
 END
 btn_less_press@2x.png
 K 25
@@ -123,23 +129,17 @@ svn:wc:ra_dav:version-url
 V 108
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_slogin@2x.png
 END
-bg_select@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/bg_select@2x.png
-END
 pic_mixed.png
 K 25
 svn:wc:ra_dav:version-url
 V 104
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_mixed.png
 END
-btn_1.png
+bg_select@2x.png
 K 25
 svn:wc:ra_dav:version-url
-V 100
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_1.png
+V 107
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/bg_select@2x.png
 END
 btn_up_press.png
 K 25
@@ -147,17 +147,17 @@ svn:wc:ra_dav:version-url
 V 107
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_up_press.png
 END
+btn_1.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_1.png
+END
 btn_3.png
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_3.png
-END
-btn_except_press.png
-K 25
-svn:wc:ra_dav:version-url
-V 111
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_except_press.png
 END
 btn_5.png
 K 25
@@ -165,23 +165,29 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_5.png
 END
+btn_except_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_except_press.png
+END
 btn_7.png
 K 25
 svn:wc:ra_dav:version-url
 V 100
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_7.png
 END
-btn_classSet_press@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_classSet_press@2x.png
-END
 btn_three.png
 K 25
 svn:wc:ra_dav:version-url
 V 104
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_three.png
+END
+btn_classSet_press@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_classSet_press@2x.png
 END
 btn_9.png
 K 25
@@ -405,29 +411,29 @@ svn:wc:ra_dav:version-url
 V 105
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_submit.png
 END
-btn_multiply_press@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 116
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_multiply_press@2x.png
-END
 pic_operational.png
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_operational.png
 END
-btn_down.png
+btn_multiply_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
-V 103
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down.png
+V 116
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_multiply_press@2x.png
 END
 btn_set_press.png
 K 25
 svn:wc:ra_dav:version-url
 V 108
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_set_press.png
+END
+btn_down.png
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down.png
 END
 btn_two.png
 K 25
@@ -459,17 +465,17 @@ svn:wc:ra_dav:version-url
 V 103
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_4@2x.png
 END
-btn_ranking_press@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 115
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_ranking_press@2x.png
-END
 bg_keyboard@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/bg_keyboard@2x.png
+END
+btn_ranking_press@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_ranking_press@2x.png
 END
 btn_5_press.png
 K 25
@@ -519,17 +525,17 @@ svn:wc:ra_dav:version-url
 V 109
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_4_press@2x.png
 END
-btn_analysis@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 110
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_analysis@2x.png
-END
 btn_three_press@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 113
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_three_press@2x.png
+END
+btn_analysis@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_analysis@2x.png
 END
 pic_range@2x.png
 K 25
@@ -603,17 +609,17 @@ svn:wc:ra_dav:version-url
 V 109
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_1_press@2x.png
 END
-btn_down_Ban.png
-K 25
-svn:wc:ra_dav:version-url
-V 107
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down_Ban.png
-END
 pic_district@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_district@2x.png
+END
+btn_down_Ban.png
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down_Ban.png
 END
 btn_add.png
 K 25
@@ -621,17 +627,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_add.png
 END
-btn_multiply_press.png
-K 25
-svn:wc:ra_dav:version-url
-V 113
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_multiply_press.png
-END
 btn_classSet@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 110
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_classSet@2x.png
+END
+btn_multiply_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_multiply_press.png
 END
 btn_slider@2x.png
 K 25
@@ -669,29 +675,29 @@ svn:wc:ra_dav:version-url
 V 100
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_4.png
 END
-btn_left@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_left@2x.png
-END
 btn_up_ban.png
 K 25
 svn:wc:ra_dav:version-url
 V 105
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_up_ban.png
 END
-btn_6.png
+btn_left@2x.png
 K 25
 svn:wc:ra_dav:version-url
-V 100
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_6.png
+V 106
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_left@2x.png
 END
 btn_set@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 105
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_set@2x.png
+END
+btn_6.png
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_6.png
 END
 pic_quantity.png
 K 25
@@ -711,17 +717,17 @@ svn:wc:ra_dav:version-url
 V 107
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_classSet.png
 END
-btn_save_press.png
-K 25
-svn:wc:ra_dav:version-url
-V 109
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_save_press.png
-END
 btn_back@2x.png
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_back@2x.png
+END
+btn_save_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_save_press.png
 END
 btn_2@2x.png
 K 25
@@ -735,17 +741,17 @@ svn:wc:ra_dav:version-url
 V 105
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/bg_menu_ca.png
 END
-btn_2_press.png
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_2_press.png
-END
 pic_province.png
 K 25
 svn:wc:ra_dav:version-url
 V 107
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_province.png
+END
+btn_2_press.png
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_2_press.png
 END
 pic_add.png
 K 25
@@ -753,17 +759,17 @@ svn:wc:ra_dav:version-url
 V 102
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/pic_add.png
 END
-btn_down@2x.png
-K 25
-svn:wc:ra_dav:version-url
-V 106
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down@2x.png
-END
 btn_6_press.png
 K 25
 svn:wc:ra_dav:version-url
 V 106
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_6_press.png
+END
+btn_down@2x.png
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_down@2x.png
 END
 btn_set_press@2x.png
 K 25
@@ -962,6 +968,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 102
 /svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_set.png
+END
+btn_slider_Press_right.png
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/IOS/!svn/ver/14/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Resources/calculation/btn_slider_Press_right.png
 END
 btn_save.png
 K 25

@@ -30,13 +30,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-//    self.title = @"应用中心";
-//    NSUserDefaults *userDefault = [NSUserDefaults standardUserDefaults];
-//    NSString *userId = [userDefault objectForKey:@kUserId];
-//    if (userId) {
-//        [self createTabView];
-//    }
-    NSLog(@"APP CENTER VIEW CONTROLLER DID LOAD");
+    self.title = @"应用中心";
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -46,7 +40,9 @@
         self.edgesForExtendedLayout = UIRectEdgeNone;
     }
     self.navigationController.navigationBarHidden = NO;
-    [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0x6F2A22)];
+    if (OSVersionIsAtLeastiOS7()) {
+        [self.navigationController.navigationBar setBarTintColor:UIColorFromRGB(0xF7C783)];
+    }
     
 //    RootViewController *rootVC = [[RootViewController alloc] init];
 //    [rootVC hideMenuViewController];

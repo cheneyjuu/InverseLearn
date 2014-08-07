@@ -6,7 +6,6 @@
 //  Copyright (c) 2014年 DaZhi. All rights reserved.
 //
 
-#import "REFrostedViewController.h"
 
 @interface RootViewController : UIViewController
 

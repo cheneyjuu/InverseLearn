@@ -7,35 +7,56 @@
 //
 
 #import "AppDelegate.h"
-#import "MSDynamicsDrawerViewController.h"
 #import "DZMenuViewController.h"
+#import "MMDrawerVisualState.h"
 
-@interface AppDelegate() <MSDynamicsDrawerViewControllerDelegate>
+@interface AppDelegate()
 @property (nonatomic, strong) UIImageView *windowBackground;
+@property (nonatomic,strong) MMDrawerController * drawerController;
 @end
 
 @implementation AppDelegate
 
+-(BOOL)application:(UIApplication *)application willFinishLaunchingWithOptions:(NSDictionary *)launchOptions{
+    
+    UIViewController *leftSideDrawerViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
+    UIViewController *centerViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"appCenterController"];
+    UINavigationController *navigationController = [[UINavigationController alloc] initWithRootViewController:centerViewController];
+    
+    self.drawerController = [[MMDrawerController alloc]
+                             initWithCenterViewController:navigationController
+                             leftDrawerViewController:leftSideDrawerViewController];
+    
+    [self.drawerController setRestorationIdentifier:@"MMDrawer"];
+    [self.drawerController setMaximumLeftDrawerWidth:260.0];
+    [self.drawerController setDrawerVisualStateBlock:^(MMDrawerController *drawerController, MMDrawerSide drawerSide, CGFloat percentVisible) {
+        MMDrawerControllerDrawerVisualStateBlock block = [MMDrawerVisualState swingingDoorVisualStateBlock];
+        if(block){
+            block(drawerController, drawerSide, percentVisible);
+        }
+    }];
+    [self.drawerController setOpenDrawerGestureModeMask:MMOpenDrawerGestureModeAll];
+    [self.drawerController setCloseDrawerGestureModeMask:MMCloseDrawerGestureModeAll];
+    
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    if(OSVersionIsAtLeastiOS7()){
+        UIColor * tintColor = [UIColor colorWithRed:29.0/255.0
+                                              green:173.0/255.0
+                                               blue:234.0/255.0
+                                              alpha:1.0];
+        [self.window setTintColor:tintColor];
+    }
+    [self.window setRootViewController:self.drawerController];
+    return YES;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x6F2A22)];
+    if (OSVersionIsAtLeastiOS7()) {
+        [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0xF7C783)];
+    }
     [IQKeyboardManager sharedManager].keyboardDistanceFromTextField = 80;
-    
-    self.dynamicsDrawerViewController = (MSDynamicsDrawerViewController *)self.window.rootViewController;
-    self.dynamicsDrawerViewController.delegate = self;
-    [self.dynamicsDrawerViewController addStylersFromArray:@[[MSDynamicsDrawerScaleStyler styler], [MSDynamicsDrawerFadeStyler styler]] forDirection:MSDynamicsDrawerDirectionLeft];
-    DZMenuViewController *menuViewController = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"menuController"];
-    menuViewController.dynamicsDrawerViewController = self.dynamicsDrawerViewController;
-    [self.dynamicsDrawerViewController setDrawerViewController:menuViewController forDirection:MSDynamicsDrawerDirectionLeft];
-    
-    [menuViewController transitionToViewController];
-    
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    self.window.rootViewController = self.dynamicsDrawerViewController;
-    [self.window makeKeyAndVisible];
-    [self.window addSubview:self.windowBackground];
-    [self.window sendSubviewToBack:self.windowBackground];
     return YES;
 }
 							
@@ -64,56 +85,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (UIImageView *)windowBackground
-{
-    if (!_windowBackground) {
-        _windowBackground = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Window Background"]];
-    }
-    return _windowBackground;
-}
-
-- (NSString *)descriptionForPaneState:(MSDynamicsDrawerPaneState)paneState
-{
-    switch (paneState) {
-        case MSDynamicsDrawerPaneStateOpen:
-            return @"MSDynamicsDrawerPaneStateOpen";
-        case MSDynamicsDrawerPaneStateClosed:
-            return @"MSDynamicsDrawerPaneStateClosed";
-        case MSDynamicsDrawerPaneStateOpenWide:
-            return @"MSDynamicsDrawerPaneStateOpenWide";
-        default:
-            return nil;
-    }
-}
-
-- (NSString *)descriptionForDirection:(MSDynamicsDrawerDirection)direction
-{
-    switch (direction) {
-        case MSDynamicsDrawerDirectionTop:
-            return @"MSDynamicsDrawerDirectionTop";
-        case MSDynamicsDrawerDirectionLeft:
-            return @"MSDynamicsDrawerDirectionLeft";
-        case MSDynamicsDrawerDirectionBottom:
-            return @"MSDynamicsDrawerDirectionBottom";
-        case MSDynamicsDrawerDirectionRight:
-            return @"MSDynamicsDrawerDirectionRight";
-        default:
-            return nil;
-    }
-}
-
-#pragma mark - MSDynamicsDrawerViewControllerDelegate
-
-- (void)dynamicsDrawerViewController:(MSDynamicsDrawerViewController *)drawerViewController mayUpdateToPaneState:(MSDynamicsDrawerPaneState)paneState forDirection:(MSDynamicsDrawerDirection)direction
-{
-    NSLog(@"Drawer view controller may update to state `%@` for direction `%@`", [self descriptionForPaneState:paneState], [self descriptionForDirection:direction]);
-}
-
-- (void)dynamicsDrawerViewController:(MSDynamicsDrawerViewController *)drawerViewController didUpdateToPaneState:(MSDynamicsDrawerPaneState)paneState forDirection:(MSDynamicsDrawerDirection)direction
-{
-    NSLog(@"Drawer view controller did update to state `%@` for direction `%@`", [self descriptionForPaneState:paneState], [self descriptionForDirection:direction]);
 }
 
 @end

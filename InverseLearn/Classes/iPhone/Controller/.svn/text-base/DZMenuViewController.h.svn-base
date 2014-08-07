@@ -8,8 +8,4 @@
 
 @interface DZMenuViewController : UITableViewController <UIGestureRecognizerDelegate>
 
-@property (nonatomic, weak) MSDynamicsDrawerViewController *dynamicsDrawerViewController;
-
-- (void)transitionToViewController;
-
 @end

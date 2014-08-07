@@ -17,15 +17,25 @@
     #import <AFNetworking.h>
     #import <IQKeyboardManager.h>
     #import <TSMessage.h>
-    #import <MSDynamicsDrawerViewController/MSDynamicsDrawerViewController.h>
+    #import <MMDrawerController.h>
 #endif
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 #define iPhone5 ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(640, 1136), [[UIScreen mainScreen] currentMode].size) : NO)
 
+static BOOL OSVersionIsAtLeastiOS7() {
+    return (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_6_1);
+}
+
 #define kUserId     "userId"
 #define kUserName   "userName"
 #define kUserHead   "userHead"
+
+const static NSString *kRange = @"range";
+const static NSString *kCount = @"count";
+const static NSString *kSymbole = @"symbole";
+const static NSString *kMixRole = @"mixRole";
+const static NSString *kOralCalculation = @"oralCalculation";
 
 static const NSString *baseUrl = @"http://192.168.5.151:14133";

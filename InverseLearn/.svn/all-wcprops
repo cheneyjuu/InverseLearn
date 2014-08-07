@@ -19,13 +19,13 @@ AppDelegate.h
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/AppDelegate.h
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/AppDelegate.h
 END
 InverseLearn-Prefix.pch
 K 25
 svn:wc:ra_dav:version-url
 V 92
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/InverseLearn-Prefix.pch
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/InverseLearn-Prefix.pch
 END
 ViewController.h
 K 25
@@ -37,7 +37,7 @@ AppDelegate.m
 K 25
 svn:wc:ra_dav:version-url
 V 82
-/svn/IOS/!svn/ver/12/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/AppDelegate.m
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/AppDelegate.m
 END
 ViewController.m
 K 25

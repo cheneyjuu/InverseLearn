@@ -12,6 +12,7 @@
 
 @property (nonatomic, readonly, copy) NSString *symbol;
 @property (nonatomic, readwrite, strong) NSMutableArray *symbolArray;
+@property (nonatomic, strong) NSString *mixRule;//混合运算规则
 
 @end
 
@@ -32,15 +33,38 @@
     // Do any additional setup after loading the view.
     
     _symbolArray = [NSMutableArray array];
+    [_symbolArray addObject:@"+"];
+    _mixRule = @"second";
     
     _rangeSlider.continuous = YES;
-    [_rangeSlider setThumbImage:[UIImage imageNamed:@"btn_contacts"] forState:UIControlStateNormal];
     [_rangeSlider addTarget:self action:@selector(rangChangedAction:) forControlEvents:UIControlEventValueChanged];
     _rangeTextField.text = @"10";
+    
+    UIImage *stetchLeftTrack = [UIImage imageNamed:@"btn_slider_Press_right"];
+    UIImage *stetchRightTrack = [UIImage imageNamed:@"btn_slider_left"];
+    UIImage *thumbImage = [UIImage imageNamed:@"btn_contacts"];
+    [_rangeSlider setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal];
+    [_rangeSlider setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
+    [_rangeSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    [_rangeSlider setThumbImage:thumbImage forState:UIControlStateNormal];
     
     _countSlider.continuous = YES;
     [_countSlider addTarget:self action:@selector(countChangedAction:) forControlEvents:UIControlEventValueChanged];
     _countTextField.text = @"10";
+    [_countSlider setMaximumTrackImage:stetchRightTrack forState:UIControlStateNormal];
+    [_countSlider setMinimumTrackImage:stetchLeftTrack forState:UIControlStateNormal];
+    [_countSlider setThumbImage:thumbImage forState:UIControlStateHighlighted];
+    [_countSlider setThumbImage:thumbImage forState:UIControlStateNormal];
+    
+    // TODO: add button event
+    [_secondOperationButton addTarget:self action:@selector(secondAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_thirdOperationButton addTarget:self action:@selector(thirdAction:) forControlEvents:UIControlEventTouchUpInside];
+    [_fourthOperationButton addTarget:self action:@selector(fourthAction:) forControlEvents:UIControlEventTouchUpInside];
+    
+    NSUserDefaults *userDefauls = [NSUserDefaults standardUserDefaults];
+    if ([userDefauls objectForKey:kOralCalculation] == nil) {
+        [self saveConfigAction:nil];// 设置默认值
+    }
 }
 
 -(void) viewWillAppear:(BOOL)animated{
@@ -81,8 +105,6 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
 /**
  * 点击运算符号时调用
  * @param sender类型为UIButton,button的tag在stroyboard中已设置。
@@ -95,27 +117,105 @@
     
     UIButton *symbolButton = (UIButton *)sender;
     
+    NSString *imageName;
+    
     if (symbolButton.tag == 0) {
         _symbol = @"+";
+        imageName = @"btn_plus";
     } else if (symbolButton.tag == 1){
         _symbol = @"-";
+        imageName = @"btn_less";
     } else if (symbolButton.tag == 2){
         _symbol = @"*";
+        imageName = @"btn_multiply";
     } else if (symbolButton.tag == 3){
         _symbol = @"/";
+        imageName = @"btn_except";
     } else{
         _symbol = nil;
     }
     
+    
     // 如果运算符为选中状态，则将其添加到“操作符数组”中，否则从“操作符数组”中删除
     if (symbolButton.selected == 1) {
         symbolButton.selected = 0;
+        [symbolButton setBackgroundImage:[UIImage imageNamed:imageName] forState:UIControlStateNormal];
         [_symbolArray removeObject:_symbol];
     } else {
         symbolButton.selected = 1;
+        [symbolButton setBackgroundImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@_press", imageName]] forState:UIControlStateSelected];
         [_symbolArray addObject:_symbol];
     }
+    
 }
+
+- (IBAction)saveConfigAction:(id)sender {
+    // TODO: 保存设置
+    NSMutableDictionary *configDict = [NSMutableDictionary dictionary];
+    [configDict setObject:_rangeTextField.text  forKey:kRange];
+    [configDict setObject:_countTextField.text  forKey:kCount];
+    [configDict setObject:_symbolArray          forKey:kSymbole];
+    [configDict setObject:_mixRule              forKey:kMixRole];
+    
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    [userDefaults setObject:configDict forKey:kOralCalculation];
+}
+
+#pragma mark - button event
+
+-(void)secondAction:(UIButton *)button{
+    _mixRule = @"second";
+    if (button.selected == 1) {
+        button.selected = 0;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_two"] forState:UIControlStateNormal];
+    } else {
+        button.selected = 1;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_two_press"] forState:UIControlStateSelected];
+        
+        _thirdOperationButton.selected = 0;
+        _fourthOperationButton.selected = 0;
+        
+        [_thirdOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_three"] forState:UIControlStateNormal];
+        [_fourthOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_four"] forState:UIControlStateNormal];
+    }
+}
+
+-(void)thirdAction:(UIButton *)button{
+    _mixRule = @"third";
+    if (button.selected == 1) {
+        button.selected = 0;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_three"] forState:UIControlStateNormal];
+    } else {
+        button.selected = 1;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_three_press"] forState:UIControlStateSelected];
+        
+        _secondOperationButton.selected = 0;
+        _fourthOperationButton.selected = 0;
+        
+        [_secondOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_two"] forState:UIControlStateNormal];
+        [_fourthOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_four"] forState:UIControlStateNormal];
+    }
+    // 判断选择的运算符号，如果是是三则运算，必须包含至少一个一级运算符和一个二级运算符
+}
+
+-(void)fourthAction:(UIButton *)button{
+    _mixRule = @"fourth";
+    if (button.selected == 1) {
+        button.selected = 0;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_four"] forState:UIControlStateNormal];
+    } else {
+        button.selected = 1;
+        [button setBackgroundImage:[UIImage imageNamed:@"btn_four_press"] forState:UIControlStateSelected];
+        
+        _secondOperationButton.selected = 0;
+        _thirdOperationButton.selected = 0;
+        
+        [_secondOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_two"] forState:UIControlStateNormal];
+        [_thirdOperationButton setBackgroundImage:[UIImage imageNamed:@"btn_three"] forState:UIControlStateNormal];
+    }
+}
+
+#pragma mark - navigation pop
 
 -(void)backAction:(id)sender{
     [self.navigationController popViewControllerAnimated:YES];

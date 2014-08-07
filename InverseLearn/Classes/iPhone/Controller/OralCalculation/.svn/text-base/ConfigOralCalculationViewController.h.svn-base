@@ -16,6 +16,12 @@
 @property (weak, nonatomic) IBOutlet UISlider *countSlider;
 @property (weak, nonatomic) IBOutlet UITextField *countTextField;
 
+
+@property (weak, nonatomic) IBOutlet UIButton *secondOperationButton;
+@property (weak, nonatomic) IBOutlet UIButton *thirdOperationButton;
+@property (weak, nonatomic) IBOutlet UIButton *fourthOperationButton;
+
 - (IBAction)symbolsAction:(id)sender;
+- (IBAction)saveConfigAction:(id)sender;
 
 @end

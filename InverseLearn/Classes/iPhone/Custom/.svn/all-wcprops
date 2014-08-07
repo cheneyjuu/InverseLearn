@@ -3,6 +3,12 @@ svn:wc:ra_dav:version-url
 V 89
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom
 END
+MenuCell.m
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom/MenuCell.m
+END
 QRadioButton.h
 K 25
 svn:wc:ra_dav:version-url
@@ -33,6 +39,12 @@ svn:wc:ra_dav:version-url
 V 112
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom/radio_unchecked@2x.png
 END
+MenuCell.xib
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom/MenuCell.xib
+END
 QRadioButton.m
 K 25
 svn:wc:ra_dav:version-url
@@ -56,6 +68,12 @@ K 25
 svn:wc:ra_dav:version-url
 V 109
 /svn/IOS/!svn/ver/6/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom/radio_unchecked.png
+END
+MenuCell.h
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/IOS/!svn/ver/15/%E5%A4%A7%E7%9F%A5app/InverseLearn/InverseLearn/Classes/iPhone/Custom/MenuCell.h
 END
 CQSegmentControl.h
 K 25

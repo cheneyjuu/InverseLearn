@@ -30,6 +30,10 @@
 		645A2A92197F84E60066C901 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 645A2A91197F84E60066C901 /* QuartzCore.framework */; };
 		645AD9C719808A83002389D9 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645AD9C619808A83002389D9 /* UserModel.m */; };
 		645AD9CA19808AFC002389D9 /* UserViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 645AD9C919808AFC002389D9 /* UserViewModel.m */; };
+		648028F619931B6A005B1298 /* btn_slider_left.png in Resources */ = {isa = PBXBuildFile; fileRef = 648028F219931B6A005B1298 /* btn_slider_left.png */; };
+		648028F919932B68005B1298 /* btn_slider_Press_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 648028F819932B68005B1298 /* btn_slider_Press_right.png */; };
+		648028FB19934C43005B1298 /* MenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 648028FA19934C43005B1298 /* MenuCell.xib */; };
+		648028FE19934E16005B1298 /* MenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 648028FD19934E16005B1298 /* MenuCell.m */; };
 		64930BB119809CF0005FDD9F /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64930BB019809CF0005FDD9F /* RegisterViewController.m */; };
 		64930BD419809FD1005FDD9F /* app_default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BB319809FD1005FDD9F /* app_default@2x.png */; };
 		64930BD519809FD1005FDD9F /* app_mentalArithmetic@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BB419809FD1005FDD9F /* app_mentalArithmetic@2x.png */; };
@@ -53,7 +57,6 @@
 		64930BE719809FD1005FDD9F /* btn_no@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BC619809FD1005FDD9F /* btn_no@2x.png */; };
 		64930BE819809FD1005FDD9F /* btn_outAbout_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BC719809FD1005FDD9F /* btn_outAbout_press@2x.png */; };
 		64930BE919809FD1005FDD9F /* btn_outAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BC819809FD1005FDD9F /* btn_outAbout@2x.png */; };
-		64930BEA19809FD1005FDD9F /* btn_submit_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BC919809FD1005FDD9F /* btn_submit_press@2x.png */; };
 		64930BEC19809FD1005FDD9F /* btn_toAbout_press@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BCB19809FD1005FDD9F /* btn_toAbout_press@2x.png */; };
 		64930BED19809FD1005FDD9F /* btn_toAbout@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BCC19809FD1005FDD9F /* btn_toAbout@2x.png */; };
 		64930BEE19809FD1005FDD9F /* btn_yes@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 64930BCD19809FD1005FDD9F /* btn_yes@2x.png */; };
@@ -332,6 +335,11 @@
 		645AD9C619808A83002389D9 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		645AD9C819808AFC002389D9 /* UserViewModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewModel.h; sourceTree = "<group>"; };
 		645AD9C919808AFC002389D9 /* UserViewModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewModel.m; sourceTree = "<group>"; };
+		648028F219931B6A005B1298 /* btn_slider_left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_slider_left.png; sourceTree = "<group>"; };
+		648028F819932B68005B1298 /* btn_slider_Press_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_slider_Press_right.png; sourceTree = "<group>"; };
+		648028FA19934C43005B1298 /* MenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuCell.xib; sourceTree = "<group>"; };
+		648028FC19934E16005B1298 /* MenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuCell.h; sourceTree = "<group>"; };
+		648028FD19934E16005B1298 /* MenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuCell.m; sourceTree = "<group>"; };
 		64930BAF19809CF0005FDD9F /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RegisterViewController.h; path = ../RegisterViewController.h; sourceTree = "<group>"; };
 		64930BB019809CF0005FDD9F /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RegisterViewController.m; path = ../RegisterViewController.m; sourceTree = "<group>"; };
 		64930BB319809FD1005FDD9F /* app_default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app_default@2x.png"; sourceTree = "<group>"; };
@@ -781,6 +789,8 @@
 		64A744DA1992088B00CAABB7 /* calculation */ = {
 			isa = PBXGroup;
 			children = (
+				648028F819932B68005B1298 /* btn_slider_Press_right.png */,
+				648028F219931B6A005B1298 /* btn_slider_left.png */,
 				64A7464F19920C4800CAABB7 /* pic_quantity@2x.png */,
 				64A744DB1992088B00CAABB7 /* bg_keyboard.png */,
 				64A744DC1992088B00CAABB7 /* bg_keyboard@2x.png */,
@@ -1065,6 +1075,9 @@
 				64E1BDF51980E37C000183E1 /* radio_unchecked@2x.png */,
 				64E1BDED1980DD1A000183E1 /* InsetsTextField.h */,
 				64E1BDEE1980DD1A000183E1 /* InsetsTextField.m */,
+				648028FA19934C43005B1298 /* MenuCell.xib */,
+				648028FC19934E16005B1298 /* MenuCell.h */,
+				648028FD19934E16005B1298 /* MenuCell.m */,
 			);
 			path = Custom;
 			sourceTree = "<group>";
@@ -1183,6 +1196,7 @@
 				64A745F71992088C00CAABB7 /* btn_left_press@2x.png in Resources */,
 				64A746371992088C00CAABB7 /* pic_city@2x.png in Resources */,
 				64A7465019920C4800CAABB7 /* pic_quantity@2x.png in Resources */,
+				648028F919932B68005B1298 /* btn_slider_Press_right.png in Resources */,
 				64A745CB1992088C00CAABB7 /* btn_8_press@2x.png in Resources */,
 				64A745A01992088C00CAABB7 /* bg_project_ca@2x.png in Resources */,
 				64930BE719809FD1005FDD9F /* btn_no@2x.png in Resources */,
@@ -1324,6 +1338,8 @@
 				64A745D61992088C00CAABB7 /* btn_analysis_press.png in Resources */,
 				64930BF419809FD1005FDD9F /* pic_line_sawtooth@2x.png in Resources */,
 				64A745971992088C00CAABB7 /* bg_menu_ca-568h@2x.png in Resources */,
+				648028FB19934C43005B1298 /* MenuCell.xib in Resources */,
+				648028F619931B6A005B1298 /* btn_slider_left.png in Resources */,
 				64A745C31992088C00CAABB7 /* btn_6_press@2x.png in Resources */,
 				64A745E71992088C00CAABB7 /* btn_down@2x.png in Resources */,
 				64A745961992088C00CAABB7 /* bg_keyboard@2x.png in Resources */,
@@ -1356,7 +1372,6 @@
 				64A745B61992088C00CAABB7 /* btn_3_press.png in Resources */,
 				64A746191992088C00CAABB7 /* btn_slider@2x.png in Resources */,
 				64A746011992088C00CAABB7 /* btn_multiply@2x.png in Resources */,
-				64930BEA19809FD1005FDD9F /* btn_submit_press@2x.png in Resources */,
 				64A746021992088C00CAABB7 /* btn_multiply_press.png in Resources */,
 				64A746301992088C00CAABB7 /* icon_yes.png in Resources */,
 				64A746431992088C00CAABB7 /* pic_province.png in Resources */,
@@ -1481,6 +1496,7 @@
 				64FA0E3619889BA1001A1E0E /* RootViewController.m in Sources */,
 				64E1BDF61980E37C000183E1 /* QRadioButton.m in Sources */,
 				64930BB119809CF0005FDD9F /* RegisterViewController.m in Sources */,
+				648028FE19934E16005B1298 /* MenuCell.m in Sources */,
 				64E0FF61197E056E006B78BF /* main.m in Sources */,
 				64FF9025198F354600453142 /* CreateOralCalculationViewController.m in Sources */,
 				64FF9021198F348000453142 /* OralCalculationViewController.m in Sources */,

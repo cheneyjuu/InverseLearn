@@ -30,21 +30,16 @@
     UIBarButtonItem *leftButtonItem = [self createBackButton];
     self.navigationItem.leftBarButtonItem = leftButtonItem;
     // Do any additional setup after loading the view.
-    NSArray *familyNames =[[NSArray alloc]initWithArray:[UIFont familyNames]];
-    
-    NSArray *fontNames;
-    NSInteger indFamily, indFont;
-    for(indFamily=0;indFamily<[familyNames count];++indFamily)
-    {
-        NSLog(@"Family name: %@", [familyNames objectAtIndex:indFamily]);
-        fontNames =[[NSArray alloc]initWithArray:[UIFont fontNamesForFamilyName:[familyNames objectAtIndex:indFamily]]];
-        for(indFont=0; indFont<[fontNames count]; ++indFont)
-        {
-            NSLog(@"    Font name: %@",[fontNames objectAtIndex:indFont]);
-        }
-    }
 
-    [self thirdArithmetic:@[@"+", @"-", @"*", @"/"] quantity:10 topicRange:100];
+    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+    NSDictionary *configDict = [userDefaults objectForKey:kOralCalculation];
+    NSArray *symbolsArray = [configDict objectForKey:kSymbole];
+    NSString *range = [configDict objectForKey:kRange];
+    NSString *quantity = [configDict objectForKey:kCount];
+    NSString *mixRole = [configDict objectForKey:kMixRole];
+    if ([mixRole isEqualToString:@"third"]) {
+        [self thirdArithmetic:symbolsArray quantity:quantity.intValue topicRange:range.intValue];
+    }
 }
 
 -(void)viewWillAppear:(BOOL)animated{
