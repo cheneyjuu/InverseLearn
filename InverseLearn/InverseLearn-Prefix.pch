@@ -32,10 +32,14 @@ static BOOL OSVersionIsAtLeastiOS7() {
 #define kUserName   "userName"
 #define kUserHead   "userHead"
 
-const static NSString *kRange = @"range";
-const static NSString *kCount = @"count";
-const static NSString *kSymbole = @"symbole";
-const static NSString *kMixRole = @"mixRole";
-const static NSString *kOralCalculation = @"oralCalculation";
+const static NSString *kRange   = @"range";     // 题目范围
+const static NSString *kCount   = @"count";     // 题目数量
+const static NSString *kSymbole = @"symbole";   // 运算符号
+const static NSString *kMixRole = @"mixRole";   // 混合运算规则
+static NSString *const kOralCalculation = @"oralCalculation";
+
+static NSString *const kSecondCalculation = @"second";// 二级运算
+static NSString *const kThirdCalculation  = @"third";// 三级运算
+static NSString *const kFourthCalculation = @"fourth";// 四级运算
 
 static const NSString *baseUrl = @"http://192.168.5.151:14133";

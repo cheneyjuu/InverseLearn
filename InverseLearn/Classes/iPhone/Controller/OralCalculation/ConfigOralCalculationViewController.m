@@ -34,7 +34,7 @@
     
     _symbolArray = [NSMutableArray array];
     [_symbolArray addObject:@"+"];
-    _mixRule = @"second";
+    _mixRule = kSecondCalculation;
     
     _rangeSlider.continuous = YES;
     [_rangeSlider addTarget:self action:@selector(rangChangedAction:) forControlEvents:UIControlEventValueChanged];
@@ -78,7 +78,7 @@
 }
 
 -(UIBarButtonItem*) createBackButton{
-    // TODO: 返回到登录界面按钮
+    // TODO: 返回按钮
     UIImage* image= [UIImage imageNamed:@"btn_back"];
     CGRect backframe= CGRectMake(0, 0, image.size.width, image.size.height);
     UIButton* backButton= [UIButton buttonWithType:UIButtonTypeCustom];
@@ -151,20 +151,68 @@
 
 - (IBAction)saveConfigAction:(id)sender {
     // TODO: 保存设置
-    NSMutableDictionary *configDict = [NSMutableDictionary dictionary];
-    [configDict setObject:_rangeTextField.text  forKey:kRange];
-    [configDict setObject:_countTextField.text  forKey:kCount];
-    [configDict setObject:_symbolArray          forKey:kSymbole];
-    [configDict setObject:_mixRule              forKey:kMixRole];
     
-    NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-    [userDefaults setObject:configDict forKey:kOralCalculation];
+    // 1. 获取运算符号数组和混合运算规则，判断选择的运算规则，如果是三则运算或者四则运算，则至少需要包含一个一级运算符和至少一个二级运算符
+    
+    /**
+     * @param shouldSubmit: 用来判断是否可以提交
+     *                      默认为NO，当所有条件都符合，将其设置为YES
+     */
+    BOOL shouldSubmit = NO;
+    
+    if ([_mixRule isEqualToString:kThirdCalculation] || [_mixRule isEqualToString:kFourthCalculation]) {
+        BOOL haveFirst = NO, haveSecond = NO;
+        for (int i=0; i<_symbolArray.count; i++) {
+            if ([_symbolArray[i] isEqualToString:@"+"] || [_symbolArray[i] isEqualToString:@"-"]) {
+                haveFirst = YES;
+            }
+            if ([_symbolArray[i] isEqualToString:@"*"] || [_symbolArray[i] isEqualToString:@"/"]) {
+                haveSecond = YES;
+            }
+        }
+        if (haveFirst==YES && haveSecond == YES) {
+            shouldSubmit = YES;
+        } else {
+            shouldSubmit = NO;
+            [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"至少包含一个一级运算符和至少一个二级运算符" type:TSMessageNotificationTypeError];
+        }
+    }
+    if ([_mixRule isEqualToString:kSecondCalculation]){
+        BOOL haveFirst = NO, haveSecond = NO;
+        for (int i=0; i<_symbolArray.count; i++) {
+            if ([_symbolArray[i] isEqualToString:@"+"] || [_symbolArray[i] isEqualToString:@"-"]) {
+                haveFirst = YES;
+            }
+            if ([_symbolArray[i] isEqualToString:@"*"] || [_symbolArray[i] isEqualToString:@"/"]) {
+                haveSecond = YES;
+            }
+        }
+        if (haveFirst == YES && haveSecond == YES) {
+            shouldSubmit = NO;
+            [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"二级运算只能包含一种运算符" type:TSMessageNotificationTypeError];
+        } else {
+            shouldSubmit = YES;
+        }
+    }
+    
+    if (shouldSubmit == YES) {
+        NSMutableDictionary *configDict = [NSMutableDictionary dictionary];
+        [configDict setObject:_rangeTextField.text  forKey:kRange];
+        [configDict setObject:_countTextField.text  forKey:kCount];
+        [configDict setObject:_symbolArray          forKey:kSymbole];
+        [configDict setObject:_mixRule              forKey:kMixRole];
+        
+        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
+        [userDefaults setObject:configDict forKey:kOralCalculation];
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"保存成功" type:TSMessageNotificationTypeSuccess];
+    }
+    
 }
 
 #pragma mark - button event
 
 -(void)secondAction:(UIButton *)button{
-    _mixRule = @"second";
+    _mixRule = kSecondCalculation;
     if (button.selected == 1) {
         button.selected = 0;
         [button setBackgroundImage:[UIImage imageNamed:@"btn_two"] forState:UIControlStateNormal];
@@ -181,7 +229,7 @@
 }
 
 -(void)thirdAction:(UIButton *)button{
-    _mixRule = @"third";
+    _mixRule = kThirdCalculation;
     if (button.selected == 1) {
         button.selected = 0;
         [button setBackgroundImage:[UIImage imageNamed:@"btn_three"] forState:UIControlStateNormal];
@@ -199,7 +247,7 @@
 }
 
 -(void)fourthAction:(UIButton *)button{
-    _mixRule = @"fourth";
+    _mixRule = kFourthCalculation;
     if (button.selected == 1) {
         button.selected = 0;
         [button setBackgroundImage:[UIImage imageNamed:@"btn_four"] forState:UIControlStateNormal];

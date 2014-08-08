@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface CreateOralCalculationViewController : UIViewController
+@interface CreateOralCalculationViewController : UIViewController <UITextFieldDelegate>
 
-@property (weak, nonatomic) IBOutlet UILabel *topicLabel;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+
+- (IBAction)numberButtonAction:(id)sender;
+- (IBAction)deleteButtonAction:(id)sender;
+- (IBAction)nextButtonAction:(id)sender;
+
+- (IBAction)downButtonAction:(id)sender;
+- (IBAction)upButtonAction:(id)sender;
+
 
 @end
