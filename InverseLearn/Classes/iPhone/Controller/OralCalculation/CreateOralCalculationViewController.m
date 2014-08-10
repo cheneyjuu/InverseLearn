@@ -26,6 +26,7 @@
 
 @implementation CreateOralCalculationViewController{
     int downCount, upCount;
+    float time;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -69,7 +70,7 @@
     }
     
     // 计时器
-    _totalTime = @"00:00";
+    _totalTime = @"00.00";
     UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:_totalTime style:UIBarButtonItemStyleDone target:self action:nil];
     [rightBarButtonItem setTintColor:[UIColor whiteColor]];
     self.navigationItem.rightBarButtonItem = rightBarButtonItem;
@@ -79,19 +80,18 @@
 
 -(void)initializeTimer {
     
-    int theInterval = 1;
-    _totalTime = [NSString stringWithFormat:@"%d", theInterval];
-    
-    _theTimer = [NSTimer scheduledTimerWithTimeInterval:theInterval
+    _theTimer = [NSTimer scheduledTimerWithTimeInterval:1
                                                 target:self
-                                              selector:@selector(countTotalTimer:)
+                                              selector:@selector(updateTime:)
                                               userInfo:nil
                                                repeats:YES];
 }
 
--(void)countTotalTimer:(id)sender{
-    UIBarButtonItem *rightBarButtonItem = self.navigationItem.rightBarButtonItem;
-    [rightBarButtonItem setTitle:_totalTime];
+-(float)updateTime:(id)sender{
+    time += 1;
+    _totalTime = [NSString stringWithFormat:@"%02d:%02d",(int)(time / 60) ,(int)time - ( 60 * (int)( time / 60 ) )];
+    [self.navigationItem.rightBarButtonItem setTitle:_totalTime];
+    return time;
 }
 
 -(void)viewWillAppear:(BOOL)animated{
