@@ -19,10 +19,13 @@
 @property (nonatomic, strong) NSMutableArray *answerButtonArray;
 @property (nonatomic, strong) NSMutableString *answer;
 
+@property (nonatomic, strong) NSString *totalTime;
+@property (nonatomic) NSTimer *theTimer;
+
 @end
 
 @implementation CreateOralCalculationViewController{
-    int downCount;
+    int downCount, upCount;
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -44,7 +47,7 @@
     
     self.topicArray = [NSMutableArray array];
     self.answerButtonArray = [NSMutableArray array];
-    downCount = 1;
+    downCount = upCount = 1;
     self.answer = [[NSMutableString alloc] init];
     // Do any additional setup after loading the view.
 
@@ -64,6 +67,31 @@
         [self thirdArithmetic:symbolsArray quantity:quantity.intValue topicRange:range.intValue];
         [self addTopicToView];
     }
+    
+    // 计时器
+    _totalTime = @"00:00";
+    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:_totalTime style:UIBarButtonItemStyleDone target:self action:nil];
+    [rightBarButtonItem setTintColor:[UIColor whiteColor]];
+    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
+    
+    [self initializeTimer];
+}
+
+-(void)initializeTimer {
+    
+    int theInterval = 1;
+    _totalTime = [NSString stringWithFormat:@"%d", theInterval];
+    
+    _theTimer = [NSTimer scheduledTimerWithTimeInterval:theInterval
+                                                target:self
+                                              selector:@selector(countTotalTimer:)
+                                              userInfo:nil
+                                               repeats:YES];
+}
+
+-(void)countTotalTimer:(id)sender{
+    UIBarButtonItem *rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    [rightBarButtonItem setTitle:_totalTime];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
@@ -105,7 +133,6 @@
         if ([sybmol isEqualToString:@"-"]) {
             if (leftNumber > rightNumber) {
                 topic = [NSString stringWithFormat:@"%d%@%d",leftNumber, sybmol, rightNumber];
-                i--;
             } else {
                 leftNumber = arc4random() % topicRange;
                 rightNumber = arc4random() % topicRange;
@@ -113,7 +140,11 @@
         } else {
             topic = [NSString stringWithFormat:@"%d%@%d",leftNumber, sybmol, rightNumber];
         }
-        [self.topicArray addObject:topic];
+        if (topic != nil) {
+            [self.topicArray addObject:topic];
+        } else {
+            i--;
+        }
     }
 }
 
@@ -231,53 +262,77 @@
 - (IBAction)numberButtonAction:(id)sender {
     UIButton *button = (UIButton *) sender;
     int number = button.tag;// 按钮的tag value和数字是一一对应的
-    [self.answer appendString:[NSString stringWithFormat:@"%d", number]];
-//    NSLog(@"%@", self.selectedButton);
-    [self.selectedButton setTitle:self.answer forState:UIControlStateNormal];
-    [self.selectedButton setAttributedTitle:[[NSAttributedString alloc] initWithString:self.answer] forState:UIControlStateSelected];
-//    self.answerField.text = self.answer;
+    NSString *text = self.selectedButton.titleLabel.text == nil ? @"" : self.selectedButton.titleLabel.text;
+    NSString *resultAnswer = [NSString stringWithFormat:@"%@%d", text, number];
+//    [self.selectedButton setAttributedTitle:[[NSAttributedString alloc] initWithString:resultAnswer] forState:UIControlStateSelected];
+    [self.selectedButton.titleLabel setFrame:self.selectedButton.frame];
+    [self.selectedButton setTitle:resultAnswer forState:UIControlStateNormal];
+    NSLog(@"button: %@", self.selectedButton.titleLabel);
 }
 
 #pragma mark 删除按钮被点击事件
 
 - (IBAction)deleteButtonAction:(id)sender {
-//    NSString *currentAnswer = self.selectedButton.titleLabel.text;
-    // TODO: 待完善delete方法
-    int currentAnswerLength = self.answer.length;
-    [self.answer deleteCharactersInRange:NSMakeRange(currentAnswerLength - 1, currentAnswerLength -1)];//[self.answer substringWithRange:NSMakeRange(0, currentAnswerLength - 1)];
-    [self.selectedButton setAttributedTitle:[[NSAttributedString alloc] initWithString:self.answer] forState:UIControlStateSelected];
-    NSLog(@"%@", self.answer);
+    
+    NSString *currentAnswer = self.selectedButton.titleLabel.text;
+    int currentAnswerLength = currentAnswer.length;
+
+    if (currentAnswerLength > 0) {
+        currentAnswer = [currentAnswer substringWithRange:NSMakeRange(0, currentAnswerLength - 1)];
+        self.selectedButton.titleLabel.text = currentAnswer;
+        [self.selectedButton setTitle:currentAnswer forState:UIControlStateSelected];
+    }
 }
 
-#pragma mark 选择下一个输入框按钮被点击事件
+#pragma mark 向下按钮被点击事件
 
 - (IBAction)nextButtonAction:(id)sender {
     
-    // 下一个Button在数组中的下标
-    int nextButtonIndex = self.selectedButton.tag + 1;
+    self.answer = [NSMutableString new];
     
-    /** 
-     *  1. 循环buttonArray,数据是在生成button的时候加入数组中的
-     *  2. 先将所有button的背景设置为normal,state设置为normal,selected设置为NO
-     */
-    
-    for (int i=0; i<self.answerButtonArray.count; i++) {
-        UIButton *button = self.answerButtonArray[i];
-        [button setBackgroundImage:[UIImage imageNamed:@"bg_text"] forState:UIControlStateNormal];
-        button.selected = NO;
+    UIButton *currentButton = self.answerButtonArray[self.selectedButton.tag];
+    if (currentButton.titleLabel.text != nil) {
+        
+        // 下一个Button在数组中的下标
+        int nextButtonIndex;
+        if (self.selectedButton.tag < self.answerButtonArray.count - 1) {
+            nextButtonIndex = self.selectedButton.tag + 1;
+        } else {
+            nextButtonIndex = self.selectedButton.tag;
+        }
+        
+        /**
+         *  1. 循环buttonArray,数据是在生成button的时候加入数组中的
+         *  2. 先将所有button的背景设置为normal,state设置为normal,selected设置为NO
+         */
+        
+        for (int i=0; i<self.answerButtonArray.count; i++) {
+            UIButton *button = self.answerButtonArray[i];
+            [button setBackgroundImage:[UIImage imageNamed:@"bg_text"] forState:UIControlStateNormal];
+            button.selected = NO;
+        }
+        
+        /**
+         *  1. 通过下一个button的下标，从数组中获取下一个button
+         *  2. 将button背景设置为选中状态，state设置为selected，selected设置为YES
+         */
+        
+        UIButton *nextButton = self.answerButtonArray[nextButtonIndex];
+        [nextButton setBackgroundImage:[UIImage imageNamed:@"bg_text_press"] forState:UIControlStateSelected];
+        nextButton.selected = YES;
+        
+        // 将获取到的button赋值给self.selectedButton
+        self.selectedButton = nextButton;
+        
+        [self downButtonAction:nil];
+        
+        // 将scrollView滚动到可视区域, 并设置向下滚动标记为nextButton.tag + 1
+        [_scrollView setContentOffset:CGPointMake(0, currentButton.frame.origin.y)];
+        downCount = nextButton.tag + 1;
+    } else {
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"答案不能为空" type:TSMessageNotificationTypeWarning];
     }
-
-    /**
-     *  1. 通过下一个button的下标，从数组中获取下一个button
-     *  2. 将button背景设置为选中状态，state设置为selected，selected设置为YES
-     */
     
-    UIButton *currentButton = self.answerButtonArray[nextButtonIndex];
-    [currentButton setBackgroundImage:[UIImage imageNamed:@"bg_text_press"] forState:UIControlStateSelected];
-    currentButton.selected = YES;
-    
-    // 将获取到的button赋值给self.selectedButton
-    self.selectedButton = currentButton;
 }
 
 #pragma mark - 向下滚动按钮事件
@@ -293,7 +348,11 @@
 #pragma mark 向上按钮事件
 
 - (IBAction)upButtonAction:(id)sender {
-    
+    int upOffset = _scrollView.contentOffset.y - 44;
+    if (_scrollView.contentOffset.y) {
+        [self.scrollView setContentOffset:CGPointMake(0, upOffset) animated:YES];
+        downCount --;
+    }
 }
 
 #pragma mark - TextField Delegate
@@ -386,28 +445,47 @@
 }
 
 -(void)insertImage{
-    
-    NSExpression *expression = [NSExpression expressionWithFormat:self.selectedButton.restorationIdentifier];
+
     NSString *userAnswer = self.selectedButton.titleLabel.text;
+    BOOL theAnswerIsRight = [self isRightAnswer:self.selectedButton.restorationIdentifier answer:userAnswer];
+    
+    if (userAnswer != nil) {
+        CGRect frame = self.selectedButton.frame;
+        frame.origin.x = 280;
+        frame.origin.y += 10;
+        
+        UIImage *image;
+        UIImageView *imageView;
+        
+        if (theAnswerIsRight) {
+            image = [UIImage imageNamed:@"icon_yes"];
+            frame.size.width = image.size.width;
+            frame.size.height = image.size.height;
+            imageView = [[UIImageView alloc] initWithFrame:frame];
+            imageView.image = image;
+            imageView.restorationIdentifier = @"yesImageView";
+            [_scrollView addSubview:imageView];
+        } else {
+            image = [UIImage imageNamed:@"icon_no"];
+            frame.size.width = image.size.width;
+            frame.size.height = image.size.height;
+            imageView = [[UIImageView alloc] initWithFrame:frame];
+            imageView.image = image;
+            imageView.restorationIdentifier = @"yesImageView";
+            [_scrollView addSubview:imageView];
+        }
+    }
+    
+}
+
+-(BOOL)isRightAnswer:(NSString *)question answer:(NSString *)userAnswer{
+    NSExpression *expression = [NSExpression expressionWithFormat:question];
     NSString *resultAnswer = [NSString stringWithFormat:@"%@", [expression expressionValueWithObject:nil
                                                                                              context:nil]];
-    CGRect frame = self.selectedButton.frame;
-    frame.origin.x = 280;
-    frame.origin.y += 10;
     if ([userAnswer isEqualToString:resultAnswer]) {
-        UIImage *image = [UIImage imageNamed:@"icon_yes"];
-        frame.size.width = image.size.width;
-        frame.size.height = image.size.height;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = image;
-        [_scrollView addSubview:imageView];
-    } else {
-        UIImage *image = [UIImage imageNamed:@"icon_no"];
-        frame.size.width = image.size.width;
-        frame.size.height = image.size.height;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:frame];
-        imageView.image = image;
-        [_scrollView addSubview:imageView];
+        return YES;
+    } else{
+        return NO;
     }
 }
 
