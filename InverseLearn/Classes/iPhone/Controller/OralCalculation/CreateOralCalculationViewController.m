@@ -21,6 +21,7 @@
 
 @property (nonatomic, strong) NSString *totalTime;
 @property (nonatomic) NSTimer *theTimer;
+@property (nonatomic, strong) UILabel *timerLabel;
 
 @end
 
@@ -41,6 +42,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // TODO: 进入界面后，会有一个倒计时动画，以便让答题者做好答题准备
     
     self.navigationController.navigationBarHidden = NO;
     UIBarButtonItem *leftButtonItem = [self createBackButton];
@@ -70,12 +73,14 @@
     }
     
     // 计时器
-    _totalTime = @"00.00";
-    UIBarButtonItem *rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:_totalTime style:UIBarButtonItemStyleDone target:self action:nil];
-    [rightBarButtonItem setTintColor:[UIColor whiteColor]];
-    self.navigationItem.rightBarButtonItem = rightBarButtonItem;
-    
-    [self initializeTimer];
+
+    self.timerLabel = [[UILabel alloc] initWithFrame:CGRectMake(220, 55, 150, 44)];
+    self.timerLabel.text = @"00:00";
+    self.timerLabel.textColor = [UIColor whiteColor];
+    UIFont *font = [UIFont fontWithName:@"Noteworthy" size:22];
+    self.timerLabel.font = font;
+    [self.view addSubview:self.timerLabel];
+//    [self initializeTimer];
 }
 
 -(void)initializeTimer {
@@ -90,7 +95,7 @@
 -(float)updateTime:(id)sender{
     time += 1;
     _totalTime = [NSString stringWithFormat:@"%02d:%02d",(int)(time / 60) ,(int)time - ( 60 * (int)( time / 60 ) )];
-    [self.navigationItem.rightBarButtonItem setTitle:_totalTime];
+    self.timerLabel.text = _totalTime;
     return time;
 }
 
@@ -132,13 +137,13 @@
         // 此处判断是为了保证不会出现负数
         if ([sybmol isEqualToString:@"-"]) {
             if (leftNumber > rightNumber) {
-                topic = [NSString stringWithFormat:@"%d%@%d",leftNumber, sybmol, rightNumber];
+                topic = [NSString stringWithFormat:@"%d %@ %d",leftNumber, sybmol, rightNumber];
             } else {
                 leftNumber = arc4random() % topicRange;
                 rightNumber = arc4random() % topicRange;
             }
         } else {
-            topic = [NSString stringWithFormat:@"%d%@%d",leftNumber, sybmol, rightNumber];
+            topic = [NSString stringWithFormat:@"%d %@ %d",leftNumber, sybmol, rightNumber];
         }
         if (topic != nil) {
             [self.topicArray addObject:topic];
@@ -200,17 +205,21 @@
     UIButton *sequenceButton;
     UILabel *topicLabel;
     CGRect buttonFrame = CGRectMake(0, 0, 44, 44);
-    CGRect topicFrame = CGRectMake(50, 0, 140, 44);
+    CGRect topicFrame = CGRectMake(70, 0, 140, 44);
     CGRect answerFrame = CGRectMake(200, 0, 60, 44);
+    UIFont *font = [UIFont fontWithName:@"Noteworthy" size:24];
     for (int i=0; i<_topicArray.count; i++) {
         sequenceButton = [UIButton buttonWithType:UIButtonTypeCustom];
         buttonFrame.origin.y = buttonFrame.size.height * i;
         [sequenceButton setFrame:buttonFrame];
+        sequenceButton.titleLabel.font = font;
         [sequenceButton setTitle:[NSString stringWithFormat:@"%d", i+1] forState:UIControlStateNormal];
         
         topicLabel = [[UILabel alloc] initWithFrame: topicFrame];
         topicFrame.origin.y = topicFrame.size.height * i;
         [topicLabel setFrame:topicFrame];
+        topicLabel.font = font;
+        topicLabel.textColor = [UIColor whiteColor];
         topicLabel.text = _topicArray[i];
         
         answerFrame.origin.y = answerFrame.size.height * i;
@@ -435,13 +444,17 @@
 -(void)answerButtonAction:(UIButton *)button{
     self.answer = [[NSMutableString alloc] init];
     
-    [self insertImage];
-    
-    self.selectedButton.selected = NO;  // 上一个Button
-    [self.selectedButton setBackgroundImage:[UIImage imageNamed:@"bg_text"] forState:UIControlStateNormal];
-    self.selectedButton = button;       // 当前Button
-    self.selectedButton.selected = YES;
-    [self.selectedButton setBackgroundImage:[UIImage imageNamed:@"bg_text_press"] forState:UIControlStateSelected];
+    if (self.selectedButton.titleLabel.text == nil) {
+        [TSMessage showNotificationInViewController:self title:@"提示信息" subtitle:@"答案不能为空" type:TSMessageNotificationTypeWarning];
+    } else {
+        [self insertImage];
+        
+        self.selectedButton.selected = NO;  // 上一个Button
+        [self.selectedButton setBackgroundImage:[UIImage imageNamed:@"bg_text"] forState:UIControlStateNormal];
+        self.selectedButton = button;       // 当前Button
+        self.selectedButton.selected = YES;
+        [self.selectedButton setBackgroundImage:[UIImage imageNamed:@"bg_text_press"] forState:UIControlStateSelected];
+    }
 }
 
 -(void)insertImage{
